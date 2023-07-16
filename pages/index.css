@@ -1,18 +1,57 @@
-/* @import url(../vendor/normalize.css);
+@import url(../vendor/normalize.css);
 @import url(../vendor/fonts.css);
-@import url();
-@import url();
-@import url(); */
+/* @import url(../blocks/page.css);
+@import url(../blocks/header.css);
+@import url(../blocks/content.css);
+@import url(../blocks/profile.css);
+@import url(../blocks/cards.css);
+@import url(../blocks/card.css);
+@import url(../blocks/footer.css); */
 
 .page {
-  min-width: 1100px;
-  max-width: 1600px;
+  min-width: 320px;
+  max-width: 1280px;
   margin: 0 auto;
   font-family: "Inter", Arial, sans-serif;
-  font-size: 16px;
+  font-size: 18px;
   line-height: 20px;
+  color: #fff;
   background-color: #000;
 }
 
-/* .header {
+.content {
+  max-width: 880px;
+  margin: 0 auto;
 }
+
+.header {
+  width: 880px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  grid-gap: 33px;
+}
+
+.header__logo {
+  width: 173px;
+}
+
+.header__divider {
+  flex-grow: 1;
+  border-bottom: 1px solid #545454;
+  margin: 0;
+}
+/*
+.profile {
+}
+
+.profile__button {
+}
+
+.cards {}
+
+.card {
+}
+.footer {}
+
+.footer__copyright {}
