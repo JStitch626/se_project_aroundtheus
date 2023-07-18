@@ -9,43 +9,69 @@
 @import url(../blocks/footer.css); */
 
 .page {
- /* min-width: 320px;
+ /*
+  min-width: 320px;
   max-width: 1280px;
-  /*margin: 0 auto;
-  /*font-family: "Inter", Arial, sans-serif;
+  margin: 0 auto;
   font-style: normal;
   */
    background-color: #000;
    color: #fff;
+   /*
+   font-family: "Inter", Arial, sans-serif;
+   font-style: normal;
+   font-weight: 400; */
 }
 
 .page__content {
-  margin-left: 200px;
-  margin-right: 200px;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.page__section {
+  max-width: 880px;
+  width:100%;
+  position: relative;
+  margin: 0 auto;
 }
 
 .header {
   margin-top: 45px;
-  max-width: 880px;
+  /*
   display: flex;
   flex-direction: column;
   grid-gap: 33px;
+  */
 }
-
+/*
 .header__logo {
   width: 173px;
 }
-
+/*
 .header__divider {
   flex-grow: 1;
   border-bottom: 1px solid #545454;
   margin: 0;
 }
 
+.content {
+
+}
+*/
+
 .profile {
   display: flex;
   align-items: center;
   padding-top: 40px;
+}
+
+.profile__image {
+  height: 120px;
+  width: 120px;
+  border-radius: 50%;
+  margin-right: 24px;
+
 }
 
 .profile__info {
@@ -63,20 +89,31 @@
   background: transparent url(../images/edit-icon.svg) center no-repeat;
   height: 24px;
   width: 24px;
+  grid-area: button;
 }
 
 .profile__add-button {
   background: transparent url(../images/add-icon.svg) center no-repeat;
   width: 150px;
   height: 50px;
+  margin-left: auto;
 }
 
 .profile__title {
   margin: 0;
+  font-size: 42px;
+  line-height: 48px;
+  font-weight: 500;
+  grid-area: title;
 }
 
-.profile__subtitle {
+.profile__description {
   margin: 0;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 22px;
+  grid-area: description;
 }
 /*
 .cards {
