@@ -9,15 +9,12 @@
 @import url(../blocks/footer.css); */
 
 .page {
- /*
   min-width: 320px;
   max-width: 1280px;
   margin: 0 auto;
-  font-style: normal;
-  */
-   background-color: #000;
-   color: #fff;
-   /*
+  background-color: #000;
+  color: #fff;
+  /*
    font-family: "Inter", Arial, sans-serif;
    font-style: normal;
    font-weight: 400; */
@@ -31,33 +28,33 @@
 
 .page__section {
   max-width: 880px;
-  width:100%;
+  width: 100%;
   position: relative;
   margin: 0 auto;
 }
 
 .header {
   margin-top: 45px;
-  /*
-  display: flex;
-  flex-direction: column;
-  grid-gap: 33px;
-  */
 }
-/*
+
+/*code from tutor Jorge Berroa */
+.header::before {
+  content: "";
+  width: 100%;
+  height: 1px;
+  opacity: 0.7;
+  background: #545454;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: 0;
+}
+
 .header__logo {
-  width: 173px;
+  padding-bottom: 41px;
 }
 /*
-.header__divider {
-  flex-grow: 1;
-  border-bottom: 1px solid #545454;
-  margin: 0;
-}
-
-.content {
-
-}
+.content {}
 */
 
 .profile {
@@ -71,14 +68,13 @@
   width: 120px;
   border-radius: 50%;
   margin-right: 24px;
-
 }
 
 .profile__info {
   display: grid;
   grid-template-areas:
-  "title button"
-  "description description";
+    "title button"
+    "description description";
   grid-template-columns: minmax(auto, 373px) auto;
   margin: 0;
   row-gap: 7px;
@@ -115,12 +111,31 @@
   line-height: 22px;
   grid-area: description;
 }
-/*
+
 .cards {
-  grid-gap: 20px 17px;}
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 20px 17px;
+  padding-top: 50px;
+}
 
 .card {
+  background-color: #fff;
+  color: #000;
+  border-radius: 10px;
+  height: 361px;
 }
-.footer {}
 
-.footer__copyright {}
+.card__image {
+  width: 282px;
+  height: 282px;
+  border-radius: 10px 10px 0px 0px;
+}
+
+/*
+.footer {
+}
+
+.footer__copyright {
+}
