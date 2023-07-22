@@ -7,8 +7,6 @@
 @import url(../blocks/cards.css);
 @import url(../blocks/card.css);
 @import url(../blocks/footer.css); */
-@media all and (max-width: 320px) {
-}
 
 .page {
   min-width: 320px;
@@ -30,6 +28,12 @@
   width: 100%;
   position: relative;
   margin: 0 auto;
+}
+@media screen and (max-width: 1100px) {
+  .page__section {
+    margin: 0 20px;
+    max-width: calc(100% - 40px);
+  }
 }
 
 .header {
@@ -60,6 +64,23 @@
   display: flex;
   align-items: center;
   padding-top: 40px;
+}
+
+@media screen and (max-width: 480px) {
+  .profile {
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .profile__info {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+  }
+
+  .profile__title {
+    width: 100%;
+  }
 }
 
 .profile__image {
@@ -93,7 +114,7 @@
 }
 .profile__add-button {
   background: transparent url(../images/add-icon.svg) center no-repeat;
-  border-color: #fff;
+  border: 2px solid #fff;
   border-radius: 2px;
   width: 150px;
   height: 50px;
@@ -126,7 +147,6 @@
 }
 
 .cards {
-  /*fonts*/
   padding: 50px 0 0;
 }
 
