@@ -71,6 +71,12 @@
   grid-area: description;
 }
 
+@media screen and (max-width: 770px) {
+  .profile__add-button {
+    margin: 36px 50px 0;
+  }
+}
+
 @media screen and (max-width: 480px) {
   .profile {
     flex-direction: column;
@@ -78,20 +84,23 @@
   }
 
   .profile__info {
+    grid-template-areas:
+      "title button"
+      "description description";
+    justify-content: center;
     max-width: 282px;
     padding-top: 26px;
-    column-gap: 10px;
   }
 
   .profile__edit-button {
     width: 18px;
     height: 18px;
+    column-gap: 10px;
   }
 
   .profile__title {
     font-size: 22px;
     line-height: 1.2;
-    text-wrap: nowrap;
     text-overflow: ellipsis;
     white-space: nowrap;
     overflow: hidden;
@@ -113,6 +122,7 @@
 
   .profile__add-button {
     max-width: 282px;
+    width: 100%;
     margin: 36px auto 0;
   }
 }
