@@ -1,0 +1,11 @@
+.content {
+  margin: 0;
+}
+
+/* @media screen and (max-width: 320px) {
+  .content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+} */

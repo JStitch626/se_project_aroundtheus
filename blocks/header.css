@@ -1,5 +1,7 @@
 .header {
   margin-top: 45px;
+  display: flex;
+  align-items: center;
 }
 
 /*code from tutor Jorge Berroa */
@@ -17,4 +19,14 @@
 
 .header__logo {
   padding-bottom: 41px;
+}
+
+@media screen and (max-width: 320px) {
+  .header {
+    margin: 0;
+  }
+
+  .header__logo {
+    padding: 28px 167px 32px 27px;
+  }
 }
