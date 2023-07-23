@@ -4,43 +4,6 @@
   padding-top: 40px;
 }
 
-@media screen and (max-width: 480px) {
-  .profile {
-    flex-direction: column;
-    justify-content: center;
-  }
-
-  .profile__info {
-    display: flex;
-    justify-content: center;
-    max-width: 282px;
-    padding-top: 26px;
-  }
-
-  .profile__title {
-    text-overflow: ellipsis;
-    white-space: nowrap;
-    overflow: hidden;
-    max-width: 282px;
-  }
-
-  .profile__description {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    padding-top: 14px;
-    text-overflow: ellipsis;
-    white-space: nowrap;
-    overflow: hidden;
-    max-width: 282px;
-  }
-
-  .profile__add-button {
-    max-width: 282px;
-    margin: 36px auto 0;
-  }
-}
-
 .profile__image {
   height: 120px;
   width: 120px;
@@ -71,6 +34,7 @@
 .profile__edit-button:hover {
   opacity: 0.6;
 }
+
 .profile__add-button {
   background: transparent url(../images/add-icon.svg) center no-repeat;
   border: 2px solid #fff;
@@ -83,11 +47,13 @@
 .profile__add-button:hover {
   opacity: 0.6;
 }
+
 .profile__title {
   margin: 0;
   font-size: 42px;
   line-height: 1.1;
   font-weight: 500;
+  text-wrap: nowrap;
   grid-area: title;
 }
 
@@ -103,4 +69,50 @@
   overflow: hidden;
   max-width: 373px;
   grid-area: description;
+}
+
+@media screen and (max-width: 480px) {
+  .profile {
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .profile__info {
+    max-width: 282px;
+    padding-top: 26px;
+    column-gap: 10px;
+  }
+
+  .profile__edit-button {
+    width: 18px;
+    height: 18px;
+  }
+
+  .profile__title {
+    font-size: 22px;
+    line-height: 1.2;
+    text-wrap: nowrap;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+    max-width: 282px;
+  }
+
+  .profile__description {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-top: 14px;
+    font-size: 14px;
+    line-height: 0.8;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+    max-width: 282px;
+  }
+
+  .profile__add-button {
+    max-width: 282px;
+    margin: 36px auto 0;
+  }
 }
