@@ -24,7 +24,6 @@
   margin: 0;
   font-size: 42px;
   line-height: 1.1;
-  /* line-height: 48px; */
   font-weight: 500;
   text-overflow: ellipsis;
   white-space: nowrap;
@@ -72,6 +71,10 @@
 }
 
 @media screen and (max-width: 768px) {
+  .profile__add-button {
+    display: flex;
+    object-fit: scale-down;
+  }
 }
 
 @media screen and (max-width: 621px) {
@@ -89,6 +92,7 @@
     max-width: 282px;
     padding-top: 26px;
     column-gap: 10px;
+    grid-template-columns: 1fr;
   }
 
   .profile__title {
