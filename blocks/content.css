@@ -1,11 +1,3 @@
 .content {
-  margin: 0;
+  margin: 0 auto;
 }
-
-/* @media screen and (max-width: 320px) {
-  .content {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-} */

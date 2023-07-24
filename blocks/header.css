@@ -23,7 +23,14 @@
 
 @media screen and (max-width: 320px) {
   .header {
-    margin: 0;
+    margin: 0 auto;
+    padding-top: 45px;
+  }
+
+  .header::before {
+    content: "";
+    max-width: 320px;
+    width: 100%;
   }
 
   .header__logo {

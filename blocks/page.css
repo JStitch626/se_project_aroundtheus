@@ -8,8 +8,6 @@
 }
 
 .page__content {
-  display: flex;
-  flex-direction: column;
   min-height: 100vh;
 }
 
@@ -22,6 +20,20 @@
 @media screen and (max-width: 1100px) {
   .page__section {
     margin: 0 20px;
+    max-width: calc(100% - 40px);
+  }
+}
+
+@media screen and (max-width: 320px) {
+  .page {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .page__section {
+    margin: 0 40px;
     max-width: calc(100% - 40px);
   }
 }
