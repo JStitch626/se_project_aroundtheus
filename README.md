@@ -22,11 +22,11 @@ Unlike the previous sprints that were divided into stages with briefs, we receiv
 - Composing a README.md file
 - Deploying the project to Github Pages
 
-## Github Pages Link
+**Github Pages Link**
 
 [Around the U.S.](https://jstitch626.github.io/se_project_aroundtheus/)
 
-Below you will find the overview of provided by TripleTen, including a link to the Figma design and a resource to optimize image sizes for faster loading times.
+_Below you will find the overview of provided by TripleTen, including a link to the Figma design and a resource to optimize image sizes for faster loading times._
 
 ### Overview
 
