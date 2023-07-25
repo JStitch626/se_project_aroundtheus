@@ -4,7 +4,7 @@
   align-items: center;
 }
 
-/*code from tutor Jorge Berroa */
+/*code assist from tutor Jorge Berroa */
 .header::before {
   content: "";
   width: 100%;
