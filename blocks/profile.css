@@ -37,7 +37,7 @@
   height: 24px;
   width: 24px;
   grid-area: button;
-  margin: 0;
+  margin: 0 15px 0 0;
   padding: 0;
   align-self: center;
 }
@@ -64,6 +64,7 @@
   width: 150px;
   height: 50px;
   margin-left: auto;
+  padding: 0;
 }
 
 .profile__add-button:hover {
@@ -93,6 +94,7 @@
     padding-top: 26px;
     column-gap: 10px;
     grid-template-columns: 1fr;
+    object-fit: scale-down;
   }
 
   .profile__title {
