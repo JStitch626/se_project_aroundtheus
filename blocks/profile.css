@@ -33,13 +33,14 @@
 
 .profile__edit-button {
   background: transparent url(../images/edit-icon.svg) center no-repeat;
-  border-color: #fff;
+  border: 1px solid #fff;
   height: 24px;
   width: 24px;
   grid-area: button;
   margin: 0 15px 0 0;
   padding: 0;
   align-self: center;
+  cursor: pointer;
 }
 
 .profile__edit-button:hover {
@@ -65,6 +66,7 @@
   height: 50px;
   margin-left: auto;
   padding: 0;
+  cursor: pointer;
 }
 
 .profile__add-button:hover {

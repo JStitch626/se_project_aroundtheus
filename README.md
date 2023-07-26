@@ -20,11 +20,31 @@ Unlike the previous sprints that were divided into stages with briefs, we receiv
 - CSS media queries
 - Figma layout
 - Composing a README.md file
+- Using git branch
 - Deploying the project to Github Pages
 
 **Github Pages Link** [Around the U.S.](https://jstitch626.github.io/se_project_aroundtheus/)
 
-_Below you will find the overview of provided by TripleTen, including a link to the Figma design and a resource to optimize image sizes for faster loading times._
+## Code corrections
+
+- card.css - line 42 change opacity from 0.6 to 0.5 according to Figma design
+- page.css - line 36 remove redundant css rule
+- profile.css - assign border styles of '1px solid' to `profile__edit-button` selector as shown in Figma design
+- index.html - line 23-24 remove extraneous containers
+- button style - add `cursor: pointer` declaration to each button so that a hand appears over the hovered button
+- index.html - line 41 `.cards__list` must be listed by itself because BEM does not allow `class="block block__element"`
+
+## Code enhancements
+
+- accessibility - add `aria-label` attribute to buttons, making interactive elements more accessible for end users who use screen readers
+
+## Future goals
+
+- Learn how to use auto-fit to make a more responsive layout.
+
+### Original README.md from TripleTen
+
+_Below you will find the overview provided by TripleTen, including a link to the Figma design and a resource to optimize image sizes for faster loading times._
 
 ### Overview
 
