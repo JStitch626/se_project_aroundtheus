@@ -12,16 +12,11 @@
   font-size: 14px;
   font-weight: 400;
   line-height: 1.2;
-
   border: none;
   /* border: 1px solid #000; */
   box-sizing: border-box;
   width: 100%;
-}
-
-.form__input:last-of-type {
-  margin: 0;
-  padding-bottom: 61px;
+  /* height: 27px; */
 }
 
 .form__input::placeholder {
