@@ -1,0 +1,33 @@
+.form__fieldset {
+  border: none;
+  margin: 0 auto;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  row-gap: 30px;
+}
+
+.form__input {
+  font: inherit;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.2;
+
+  border: none;
+  /* border: 1px solid #000; */
+  box-sizing: border-box;
+  width: 100%;
+}
+
+.form__input:last-of-type {
+  margin: 0;
+  padding-bottom: 61px;
+}
+
+.form__input::placeholder {
+  font: inherit;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.2;
+  color: #000;
+}
