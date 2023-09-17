@@ -6,9 +6,13 @@
   left: 0;
   background-color: rgba(0, 0, 0, 0.5);
   z-index: 999;
-  display: flex;
+  display: none;
   margin: 0;
   padding: 0 19px;
+}
+
+.modal_opened {
+  display: flex;
 }
 
 .modal__container {
