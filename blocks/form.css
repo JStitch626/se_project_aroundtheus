@@ -5,6 +5,8 @@
   display: flex;
   flex-wrap: wrap;
   row-gap: 30px;
+  max-width: 358px;
+  width: 100%;
 }
 
 .form__input {
@@ -12,11 +14,11 @@
   font-size: 14px;
   font-weight: 400;
   line-height: 1.2;
-  border: none;
-  /* border: 1px solid #000; */
   box-sizing: border-box;
+  border: none;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.2);
   width: 100%;
-  height: 27px;
+  padding-bottom: 13px;
 }
 
 .form__input::placeholder {
@@ -24,5 +26,11 @@
   font-size: 14px;
   font-weight: 400;
   line-height: 1.2;
-  color: #000;
+  color: rgba(0, 0, 0, 0.4);
+}
+
+@media screen and (max-width: 630px) {
+  .form__input {
+    padding-bottom: 9px;
+  }
 }

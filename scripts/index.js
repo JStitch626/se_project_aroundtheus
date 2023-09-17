@@ -30,4 +30,11 @@ const initialCards = [
   },
 ];
 
+/*
 console.log(initialCards);
+
+
+const profileTitle = document.querySelector(".profile__title");
+const nameInput = document.getElementsByName("name")[0];
+
+nameInput.value = profileTitle.textContent; */
