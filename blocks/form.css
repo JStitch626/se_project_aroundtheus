@@ -16,7 +16,7 @@
   /* border: 1px solid #000; */
   box-sizing: border-box;
   width: 100%;
-  /* height: 27px; */
+  height: 27px;
 }
 
 .form__input::placeholder {
