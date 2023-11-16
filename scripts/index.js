@@ -38,3 +38,9 @@ const profileTitle = document.querySelector(".profile__title");
 const nameInput = document.getElementsByName("name")[0];
 
 nameInput.value = profileTitle.textContent; */
+
+const profileEditButton = document.querySelector("#profile-edit-button");
+
+profileEditButton.addEventListener("click", function () {
+  console.log("clicked button");
+});
