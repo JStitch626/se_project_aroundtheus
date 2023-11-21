@@ -9,6 +9,7 @@
   display: none;
   margin: 0;
   padding: 0 19px;
+  visibility: hidden;
 }
 
 .modal_opened {

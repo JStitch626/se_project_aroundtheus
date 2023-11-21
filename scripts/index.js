@@ -40,7 +40,16 @@ const nameInput = document.getElementsByName("name")[0];
 nameInput.value = profileTitle.textContent; */
 
 const profileEditButton = document.querySelector("#profile-edit-button");
+const modalOpened = document.querySelector(".modal_opened");
+const modalClose = document.querySelector(".modal__close");
 
-profileEditButton.addEventListener("click", function () {
-  console.log("clicked button");
+profileEditButton.addEventListener("click", function (evt) {
+  if (true) {
+    modalOpened.setAttribute("style", "visibility: visible");
+  } else {
+    modalOpened.removeAttribute("style", "visibility: visible");
+  }
 });
+
+profileEditButton;
+modalOpened;
