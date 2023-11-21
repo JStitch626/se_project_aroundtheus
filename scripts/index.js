@@ -30,18 +30,18 @@ const initialCards = [
   },
 ];
 
-/*
-console.log(initialCards);
+// console.log(initialCards);
 
+const modalTitle = document.querySelector("#title").content;
+// const nameInput = document.getElementsByName("name")[0];
 
-const profileTitle = document.querySelector(".profile__title");
-const nameInput = document.getElementsByName("name")[0];
-
-nameInput.value = profileTitle.textContent; */
+// nameInput.value = profileTitle.textContent;
 
 const profileEditButton = document.querySelector("#profile-edit-button");
 const modalOpened = document.querySelector(".modal_opened");
 const modalCloseButton = document.querySelector(".modal__close");
+let title = document.querySelector("#title").content;
+let description = document.querySelector("#description").content;
 
 profileEditButton.addEventListener("click", function (evt) {
   if (true) {
@@ -56,7 +56,3 @@ modalCloseButton.addEventListener("click", function (evt) {
     modalOpened.removeAttribute("style", "visibility: visible");
   }
 });
-
-profileEditButton;
-modalOpened;
-modalClose;
