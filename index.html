@@ -30,7 +30,7 @@
             class="profile__image"
           />
           <div class="profile__info">
-            <h1 class="profile__title">Jacques Cousteau</h1>
+            <h1 class="profile__name">Jacques Cousteau</h1>
             <button
               aria-label="Edit profile"
               class="profile__edit-button"
@@ -154,20 +154,20 @@
 
         <form class="modal__form form">
           <fieldset class="form__fieldset">
-            <label class="form__label" for="title"></label>
+            <label class="form__label" for="name"></label>
             <input
               type="text"
-              class="form__input"
-              id="title"
-              name="title"
+              class="form__input form__input_name"
+              id="profile-edit-name"
+              name="name"
               placeholder="Name"
               required
             />
             <label class="form__label" for="description"></label>
             <input
               type="text"
-              class="form__input"
-              id="description"
+              class="form__input form__input_description"
+              id="profile-edit-description"
               name="description"
               placeholder="Description"
               required

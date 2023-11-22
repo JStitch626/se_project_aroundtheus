@@ -20,7 +20,7 @@
   column-gap: 18px;
 }
 
-.profile__title {
+.profile__name {
   margin: 0;
   font-size: 42px;
   line-height: 1.1;
@@ -99,7 +99,7 @@
     object-fit: scale-down;
   }
 
-  .profile__title {
+  .profile__name {
     font-size: 22px;
     line-height: 1.2;
     text-align: center;
