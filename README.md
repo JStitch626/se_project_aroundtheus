@@ -1,4 +1,30 @@
-# Project 3: Around The U.S.
+# Project 4: Around The U.S. interactive
+
+## Description
+
+Updated 11/24/2023
+
+This project continues where Project 3 finished. In this sprint, I incorporate the interactive features using JavaScript. The end user can manipulate the name and description on the page by clicking the "Edit" button beside the name and changing the information.
+
+When the modal opens, the form contains the current information on the page, which can then be changed. When the end user clicks the "Save" button, the new information replaces the name and description.
+
+## Project features
+
+- Semantic HTML5
+- Flexbox
+- Positioning
+- BEM blocks
+- Grid
+- CSS media queries
+- Figma layout
+- JavaScript
+- Updating the README.md file
+- Using git branch
+- Deploying the project to Github Pages
+
+**Github Pages Link** [Around the U.S.](https://jstitch626.github.io/se_project_aroundtheus/) (Work in progress)
+
+## Project 3: Around The U.S.
 
 ## Description
 
