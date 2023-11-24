@@ -23,7 +23,7 @@ Unlike the previous sprints that were divided into stages with briefs, we receiv
 - Using git branch
 - Deploying the project to Github Pages
 
-**Github Pages Link** [Around the U.S.](https://jstitch626.github.io/se_project_aroundtheus/)
+**Github Pages Link** [Around the U.S.](https://jstitch626.github.io/se_project_aroundtheus/) (Work in progress)
 
 ## Code corrections
 
