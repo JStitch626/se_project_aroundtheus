@@ -22,7 +22,9 @@ When the modal opens, the form contains the current information on the page, whi
 - Using git branch
 - Deploying the project to Github Pages
 
-**Github Pages Link** [Around the U.S.](https://jstitch626.github.io/se_project_aroundtheus/) (Work in progress)
+**Github Pages Link** [Around the U.S.](https://jstitch626.github.io/se_project_aroundtheus/) (Work in progress)  
+
+_____________________________________________________________________________________________________________________________________
 
 ### Project 3: Around The U.S.
 
