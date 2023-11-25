@@ -38,7 +38,7 @@ When the modal opens, the form contains the information currently displayed on t
 - line 62 change `<p>` to `<h2>`
 - line 69 change modifiers from boolean to key-value type
 
-  - for both inputs name and description, changed modifier to `.form__input_text_modifier-value`
+  - for both inputs name and description, changed modifier to `.form__input_profile-input_modifier-value`
 
   ## Code Enhancements
 
