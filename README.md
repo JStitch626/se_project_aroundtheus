@@ -24,6 +24,8 @@ When the modal opens, the form contains the current information on the page, whi
 
 **Github Pages Link** [Around the U.S.](https://jstitch626.github.io/se_project_aroundtheus/) (Work in progress)  
 
+_____________________________________________________________________________________________________________________________________
+
 ### Project 3: Around The U.S.
 
 This project exhibits a webpage with an adaptive design. Incorporating lessons from the previous two sprints and introducing Figma as an additional tool, I built a website that adapts to different screen sizes:
