@@ -58,15 +58,19 @@
 
     <div class="modal" id="profile-edit-modal">
       <div class="modal__container">
-        <button class="modal__close" id="profile-edit-close-button"></button>
-        <p class="modal__heading">Edit profile</p>
+        <button
+          type="button"
+          class="modal__close"
+          id="profile-edit-close-button"
+        ></button>
+        <h2 class="modal__heading">Edit profile</h2>
 
         <form class="modal__form form">
           <fieldset class="form__fieldset">
             <label class="form__label" for="profile-input-name"></label>
             <input
               type="text"
-              class="form__input form__input_name"
+              class="form__input form__input_text_name"
               id="profile-input-name"
               name="name"
               placeholder="Name"
@@ -75,7 +79,7 @@
             <label class="form__label" for="profile-input-description"></label>
             <input
               type="text"
-              class="form__input form__input_description"
+              class="form__input form__input_text_description"
               id="profile-input-description"
               name="description"
               placeholder="Description"
