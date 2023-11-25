@@ -42,7 +42,7 @@ When the modal opens, the form contains the information currently displayed on t
 
   ## Code Enhancements
 
-  - created separate functions for `profileAutoFillIn and `fillProfileForm and called the functions in the `addEventListener`
+  - created separate functions for `profileAutoFillIn` and `fillProfileForm` and called the functions in the `addEventListener`
 
 ---
 
