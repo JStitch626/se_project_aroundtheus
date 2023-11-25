@@ -1,31 +1,31 @@
 const initialCards = [
   {
-    name: "Yosemite Valley",
+    title: "Yosemite Valley",
     link: "https://practicum-content.s3.us-west-1.amazonaws.com/software-engineer/around-project/yosemite.jpg",
   },
 
   {
-    name: "Lake Louise",
+    title: "Lake Louise",
     link: "https://practicum-content.s3.us-west-1.amazonaws.com/software-engineer/around-project/lake-louise.jpg",
   },
 
   {
-    name: "Bald Mountains",
+    title: "Bald Mountains",
     link: "https://practicum-content.s3.us-west-1.amazonaws.com/software-engineer/around-project/bald-mountains.jpg",
   },
 
   {
-    name: "Latemar",
+    title: "Latemar",
     link: "https://practicum-content.s3.us-west-1.amazonaws.com/software-engineer/around-project/latemar.jpg",
   },
 
   {
-    name: "Vanoise National Park",
+    title: "Vanoise National Park",
     link: "https://practicum-content.s3.us-west-1.amazonaws.com/software-engineer/around-project/vanoise.jpg",
   },
 
   {
-    name: "Lago di Braies",
+    title: "Lago di Braies",
     link: "https://practicum-content.s3.us-west-1.amazonaws.com/software-engineer/around-project/lago.jpg]",
   },
 ];
@@ -47,6 +47,9 @@ const profileInputDescription = document.querySelector(
   "#profile-input-description"
 );
 const profileEditForm = profileEditModal.querySelector(".modal__form");
+const cardTemplate =
+  document.querySelector("#card-template").content.firstElementChild;
+const cardListElement = document.querySelector(".cards__list");
 
 /* -------------------------------------------------------------------------- */
 /*                                  Functions                                 */
@@ -54,6 +57,23 @@ const profileEditForm = profileEditModal.querySelector(".modal__form");
 
 function closePopup() {
   profileEditModal.classList.toggle("modal_opened");
+}
+
+function getCardElement(cardData) {
+  // clone the template element with all its content and store it in a cardElement variable
+  const cardElement = cardTemplate.cloneNode(true);
+  // access the card title and image and store them in variables
+  const cardImageElement = cardElement.querySelector(".card__image");
+  const cardTitleElement = cardElement.querySelector(".card__title");
+  // set the path to the image to the link field of the object
+  cardImageElement.setAttribute("src", cardData.link);
+  // set the image alt text to the name field of the object
+  cardImageElement.setAttribute("alt", cardData.title);
+
+  // set the card title to the name field of the object, too
+  cardTitleElement.textContent = cardData.title;
+  // return the ready HTML element with the filled-in data
+  return cardElement;
 }
 
 /* -------------------------------------------------------------------------- */
@@ -80,3 +100,13 @@ profileEditButton.addEventListener("click", () => {
 profileEditCloseButton.addEventListener("click", closePopup);
 
 profileEditForm.addEventListener("submit", handleProfileEditSubmit);
+
+//Replace 'for' loop with initialCards.forEach
+// for (let i = 0; i < initialCards.length; i++) {
+//   const card = initialCards[i];
+// }
+
+initialCards.forEach((cardData) => {
+  const cardElement = getCardElement(cardData);
+  cardListElement.append(cardElement);
+});
