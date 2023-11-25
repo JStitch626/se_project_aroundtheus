@@ -4,9 +4,10 @@
 
 Updated 11/24/2023
 
-This project continues where Project 3 finished. In this sprint, I incorporate the interactive features using JavaScript. The end user can manipulate the name and description on the page by clicking the "Edit" button beside the name and changing the information.
+This project continues where Project 3 finished. In this sprint, I incorporate interactive features using JavaScript. I learned how to access nodes in the DOM tree using querySelector() and querySelectorAll(), define variables, and declare and call functions to make the buttons usable.
 
-When the modal opens, the form contains the current information on the page, which can then be changed. When the end user clicks the "Save" button, the new information replaces the name and description.
+By clicking the "Edit" button, the end user can now manipulate the name and description on the page.
+When the modal opens, the form contains the information currently displayed on the page, which can then be changed. When the end user clicks the "Save" button, the new information replaces the previous name and description.
 
 ## Project features
 
@@ -22,9 +23,9 @@ When the modal opens, the form contains the current information on the page, whi
 - Using git branch
 - Deploying the project to Github Pages
 
-**Github Pages Link** [Around the U.S.](https://jstitch626.github.io/se_project_aroundtheus/) (Work in progress)  
+**Github Pages Link** [Around the U.S.](https://jstitch626.github.io/se_project_aroundtheus/) (Work in progress)
 
-_____________________________________________________________________________________________________________________________________
+---
 
 ### Project 3: Around The U.S.
 
@@ -67,6 +68,8 @@ Unlike the previous sprints that were divided into stages with briefs, we receiv
 ### Future goals
 
 - Learn how to use auto-fit to make a more responsive layout.
+
+---
 
 ### Original README.md from TripleTen
 
