@@ -25,6 +25,10 @@ When the modal opens, the form contains the information currently displayed on t
 
 **Github Pages Link** [Around the U.S.](https://jstitch626.github.io/se_project_aroundtheus/) (Work in progress)
 
+## Code Corrections
+
+- modal.css - line 24 remove height 330px
+
 ---
 
 ### Project 3: Around The U.S.
