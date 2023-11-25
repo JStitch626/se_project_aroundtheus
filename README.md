@@ -27,7 +27,22 @@ When the modal opens, the form contains the information currently displayed on t
 
 ## Code Corrections
 
-- modal.css - line 24 remove height 330px
+- modal.css
+  - line 24, `.modal__container` remove fixed height to allow input expansion or deletions
+  - line 57, `.modal__heading` remove fixed height; text elements do not need fixed height
+  - line 91 `@media screen and (max-width: 630px)` for `.modal__container` - same reason as above
+
+-index.html
+
+- line 61 add `type` to button element
+- line 62 change `<p>` to `<h2>`
+- line 69 change modifiers from boolean to key-value type
+
+  - for both inputs name and description, changed modifier to `.form__input_text_modifier-value`
+
+  ## Code Enhancements
+
+  - created separate functions for `profileAutoFillIn and `fillProfileForm and called the functions in the `addEventListener`
 
 ---
 

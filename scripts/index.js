@@ -69,14 +69,24 @@ function getCardElement(cardData) {
   return cardElement;
 }
 
+function profileAutoFillIn() {
+  profileInputName.value = profileName.textContent;
+  profileInputDescription.value = profileDescription.textContent;
+  profileEditModal.classList.toggle("modal_opened");
+}
+
+function fillProfileForm() {
+  profileName.textContent = profileInputName.value;
+  profileDescription.textContent = profileInputDescription.value;
+}
+
 /* -------------------------------------------------------------------------- */
 /*                               Event Handlers                               */
 /* -------------------------------------------------------------------------- */
 
 function handleProfileEditSubmit(evt) {
   evt.preventDefault();
-  profileName.textContent = profileInputName.value;
-  profileDescription.textContent = profileInputDescription.value;
+  fillProfileForm();
   closePopup();
 }
 
@@ -84,11 +94,7 @@ function handleProfileEditSubmit(evt) {
 /*                               Event Listeners                              */
 /* -------------------------------------------------------------------------- */
 
-profileEditButton.addEventListener("click", () => {
-  profileInputName.value = profileName.textContent;
-  profileInputDescription.value = profileDescription.textContent;
-  profileEditModal.classList.toggle("modal_opened");
-});
+profileEditButton.addEventListener("click", profileAutoFillIn);
 
 profileEditCloseButton.addEventListener("click", closePopup);
 
