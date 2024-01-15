@@ -1,13 +1,14 @@
-# Project 4: Around The U.S. interactive
+# Project 5: Around The U.S. interactive
 
 ## Description
 
-Updated 11/24/2023
+Updated 1/15/2024
 
-This project continues where Project 3 finished. In this sprint, I incorporate interactive features using JavaScript. I learned how to access nodes in the DOM tree using querySelector() and querySelectorAll(), define variables, and declare and call functions to make the buttons usable.
+**Sprint 5 Becomes More Engaging**
 
-By clicking the "Edit" button, the end user can now manipulate the name and description on the page.
-When the modal opens, the form contains the information currently displayed on the page, which can then be changed. When the end user clicks the "Save" button, the new information replaces the previous name and description.
+During the last sprint, we completed the first interactive piece of the webpage: the user can open, edit, and close the profile. Now we begin to incorporate more Javascript to allow the user to add and/or delete cards, and use the "Like" button to show which cards a user likes. Stylistically, popup modals will now smoothly transition from and to transparency.
+
+To read about the progression of this project from its humble beginnings, scroll down and read the previous descriptions.
 
 ## Project features
 
@@ -19,13 +20,32 @@ When the modal opens, the form contains the information currently displayed on t
 - CSS media queries
 - Figma layout
 - JavaScript
-- Updating the README.md file
-- Using git branch
-- Deploying the project to Github Pages
+- Create a popup form to add new cards
+- Develop a feature that allows users to add custom cards
+- Code the "Like" button to change color when user clicks it
+- Add a delete icon to the cards
+- Make the buttons work by writing the code needed
+- Open and close the picture modal when the user clicks the picture or the "Close" button respectively
+- Make the modal box smoothly open from and close to transparency
+- Update the README.md file
+- Use git branch
+- Deploy the project to Github Pages
 
 **Github Pages Link** [Around the U.S.](https://jstitch626.github.io/se_project_aroundtheus/) (Work in progress)
 
-## Code Corrections
+---
+
+### Project 4: Around The U.S. interactive
+
+### Description
+
+Updated 11/24/2023
+
+This project continues where Project 3 finished. In this sprint, we incorporate interactive features using JavaScript. we learned how to access nodes in the DOM tree using querySelector() and querySelectorAll(), define variables, and declare and call functions to make the buttons usable.
+
+By clicking the "Edit" button, the end user can now manipulate the name and description on the page. When the modal opens, the form contains the information currently displayed on the page, which can then be changed. When the end user clicks the "Save" button, the new information replaces the previous name and description.
+
+### Code Corrections
 
 - modal.css
   - line 24, `.modal__container` remove fixed height to allow input expansion or deletions
@@ -37,39 +57,23 @@ When the modal opens, the form contains the information currently displayed on t
 - line 61 add `type` to button element
 - line 62 change `<p>` to `<h2>`
 - line 69 change modifiers from boolean to key-value type
+- for both inputs name and description, changed modifier to `.form__input_profile-input_modifier-value`
 
-  - for both inputs name and description, changed modifier to `.form__input_profile-input_modifier-value`
+### Code Enhancements
 
-  ## Code Enhancements
-
-  - created separate functions for `profileAutoFillIn` and `fillProfileForm` and called the functions in the `addEventListener`
+- created separate functions for `profileAutoFillIn` and `fillProfileForm` and called the functions in the `addEventListener`
 
 ---
 
 ### Project 3: Around The U.S.
 
-This project exhibits a webpage with an adaptive design. Incorporating lessons from the previous two sprints and introducing Figma as an additional tool, I built a website that adapts to different screen sizes:
+This project exhibits a webpage with an adaptive design. Incorporating lessons from the previous two sprints and introducing Figma as an additional tool, we built a website that adapts to different screen sizes:
 
 - 1280px desktop
 - 800px tablet
 - 320px mobile phone
 
 Unlike the previous sprints that were divided into stages with briefs, we received only a general overview and the Figma design and had to create everything from scratch.
-
-### Project features
-
-- Semantic HTML5
-- Flexbox
-- Positioning
-- BEM blocks
-- Grid
-- CSS media queries
-- Figma layout
-- Composing a README.md file
-- Using git branch
-- Deploying the project to Github Pages
-
-**Github Pages Link** [Around the U.S.](https://jstitch626.github.io/se_project_aroundtheus/) (Work in progress)
 
 ### Code corrections
 
