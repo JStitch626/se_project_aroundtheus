@@ -34,7 +34,7 @@ const initialCards = [
 /*                                  Elements                                  */
 /* -------------------------------------------------------------------------- */
 
-/* ----------------------------- Profile element ---------------------------- */
+/* ----------------------------- Profile elements ---------------------------- */
 const profileEditButton = document.querySelector("#profile-edit-button");
 const profileEditModal = document.querySelector("#profile-edit-modal");
 const profileEditCloseButton = profileEditModal.querySelector(
@@ -47,14 +47,14 @@ const profileInputName = document.querySelector("#profile-input-name");
 const profileInputDescription = document.querySelector(
   "#profile-input-description"
 );
-const profileEditForm = profileEditModal.querySelector(".modal__form");
+const profileEditForm = profileEditModal.querySelector("#profile-edit-form");
 
 /* -------------------------- Card template element ------------------------- */
 const cardTemplate =
   document.querySelector("#card-template").content.firstElementChild;
 const cardListElement = document.querySelector(".cards__list");
 
-/* ------------------------------ Card element ------------------------------ */
+/* ------------------------------ Card elements ------------------------------ */
 const cardAddButton = document.querySelector("#card-add-button");
 const cardEditModal = document.querySelector("#card-edit-modal");
 const cardAddCloseButton = cardEditModal.querySelector(
@@ -69,8 +69,12 @@ const cardEditForm = cardEditModal.querySelector("#card-edit-form");
 /*                                  Functions                                 */
 /* -------------------------------------------------------------------------- */
 
-function closePopup() {
-  profileEditModal.classList.toggle("modal_opened");
+function openPopup(popupElement) {
+  modal.classList.add("modal-opened");
+}
+
+function closePopup(popupElement) {
+  modal.classList.remove("modal_opened");
 }
 
 function getCardElement(cardData) {
@@ -101,7 +105,7 @@ function fillProfileForm() {
 function handleProfileEditSubmit(evt) {
   evt.preventDefault();
   fillProfileForm();
-  closePopup();
+  closePopup(profileEditModal);
 }
 
 /* -------------------------------------------------------------------------- */
