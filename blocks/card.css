@@ -45,3 +45,23 @@
 .card__like-button:active {
   fill: #000;
 }
+
+.card__delete-button {
+  background: transparent url(../images/trash-icon.svg) center no-repeat;
+  width: 18px;
+  height: 19px;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  position: relative;
+  top: 35px;
+  left: 250px;
+}
+
+.card__delete-button:hover {
+  opacity: 0.5;
+}
+
+.card__delete-button:active {
+  fill: #000;
+}
