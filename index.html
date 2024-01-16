@@ -42,19 +42,26 @@
           <button
             aria-label="Create new profile"
             class="profile__add-button"
+            id="card-add-button"
             type="button"
           ></button>
         </section>
+
+        <!-- ----------------------------- Cards list ------------------------------ -->
 
         <section class="cards page__section">
           <ul class="cards__list"></ul>
         </section>
       </main>
 
+      <!-- ------------------------------- Footer -------------------------------- -->
+
       <footer class="footer page__section">
         <p class="footer__copyright">&copy; 2023 Around the U.S.</p>
       </footer>
     </div>
+
+    <!-- ------------------------- Edit profile modal -------------------------- -->
 
     <div class="modal" id="profile-edit-modal">
       <div class="modal__container">
@@ -92,6 +99,47 @@
         </form>
       </div>
     </div>
+
+    <!-- --------------------------- Add card modal ---------------------------- -->
+
+    <div class="modal" id="card-edit-modal">
+      <div class="modal__container">
+        <button
+          type="button"
+          class="modal__close"
+          id="card-edit-close-button"
+        ></button>
+        <h2 class="modal__heading">New Place</h2>
+
+        <form class="modal__form form">
+          <fieldset class="form__fieldset">
+            <label class="form__label" for="card-input-title"></label>
+            <input
+              type="text"
+              class="form__input form__input_card-input-title"
+              id="card-input-title"
+              name="title"
+              placeholder="Title"
+              required
+            />
+            <label class="form__label" for="card-input-image"></label>
+            <input
+              type="text"
+              class="form__input form__input_card-input-image"
+              id="card-input-image"
+              name="image"
+              placeholder="Image URL"
+              required
+            />
+          </fieldset>
+          <button type="submit" class="modal__button" id="card-save-button">
+            Save
+          </button>
+        </form>
+      </div>
+    </div>
+
+    <!-- ------------------------------ Templates ------------------------------ -->
 
     <template id="card-template">
       <li class="card">
