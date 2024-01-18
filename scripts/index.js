@@ -61,7 +61,7 @@ const cardAddCloseButton = cardAddModal.querySelector(".modal__close");
 const cardTitle = document.querySelector(".card__title");
 const cardImage = document.querySelector(".card__image");
 const cardInputTitle = document.querySelector("#card-input-title");
-const cardInputImage = document.querySelector("#card-input-image");
+const cardInputImage = document.querySelector("#card-input-image-url");
 
 /* -------------------------------------------------------------------------- */
 /*                                  Functions                                 */
@@ -85,6 +85,11 @@ function getCardElement(cardData) {
   return cardElement;
 }
 
+function renderCard(cardData) {
+  const CardElement = getCardElement(cardData);
+  cardListElement.prepend(cardElement);
+}
+
 function profileAutoFillIn() {
   profileInputName.value = profileName.textContent;
   profileInputDescription.value = profileDescription.textContent;
@@ -94,13 +99,6 @@ function profileAutoFillIn() {
 function fillProfileForm() {
   profileName.textContent = profileInputName.value;
   profileDescription.textContent = profileInputDescription.value;
-}
-
-function fillCardForm() {
-  getCardElement(cardTemplate);
-  cardTitle.textContent = cardInputTitle.value;
-  cardImage.textContent = cardInputImage.value;
-  cardListElement.prepend(cardElement);
 }
 
 /* -------------------------------------------------------------------------- */
@@ -115,7 +113,13 @@ function handleProfileEditSubmit(evt) {
 
 function handleCardAddSubmit(evt) {
   evt.preventDefault();
-  const cardElement = getCardElement(cardTemplate);
+  const name = cardInputTitle.value;
+  const link = cardInputImage.value;
+  const cardElement = getCardElement({
+    name,
+    link,
+  });
+  cardListElement.prepend(cardElement);
   closePopup(cardAddModal);
 }
 
@@ -137,6 +141,7 @@ cardAddButton.addEventListener("click", () => {
 cardAddCloseButton.addEventListener("click", () => {
   closePopup(cardAddModal);
 });
+cardAddForm.addEventListener("submit", handleCardAddSubmit);
 
 //Replace 'for' loop with initialCards.forEach
 // for (let i = 0; i < initialCards.length; i++) {
@@ -145,6 +150,5 @@ cardAddCloseButton.addEventListener("click", () => {
 
 initialCards.forEach((cardData) => {
   const cardElement = getCardElement(cardData);
-  console.log(cardElement);
   cardListElement.prepend(cardElement);
 });
