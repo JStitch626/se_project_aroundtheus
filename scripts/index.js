@@ -30,21 +30,28 @@ const initialCards = [
   },
 ];
 
-/* -------------------------- Card template element ------------------------- */
-const cardTemplate =
-  document.querySelector("#card-template").content.firstElementChild;
-const cardListElement = document.querySelector(".cards__list");
-
 /* -------------------------------------------------------------------------- */
 /*                                  Elements                                  */
 /* -------------------------------------------------------------------------- */
 
-/* ----------------------------- Profile elements ---------------------------- */
-const profileEditButton = document.querySelector("#profile-edit-button");
+/* -------------------------- Card template elements ------------------------- */
+const cardTemplate =
+  document.querySelector("#card-template").content.firstElementChild;
+const cardListElement = document.querySelector(".cards__list");
+
+/* ----------------------------- Wrappers  ---------------------------- */
 const profileEditModal = document.querySelector("#profile-edit-modal");
 const profileEditForm = profileEditModal.querySelector(".modal__form");
-const profileEditCloseButton = profileEditModal.querySelector(".modal__close");
+const cardAddModal = document.querySelector("#card-add-modal");
+const cardAddForm = cardAddModal.querySelector(".modal__form");
 
+/* ---------------------------- Buttons ---------------------------- */
+const profileEditButton = document.querySelector("#profile-edit-button");
+const profileEditCloseButton = profileEditModal.querySelector(".modal__close");
+const cardAddButton = document.querySelector("#card-add-button");
+const cardAddCloseButton = cardAddModal.querySelector(".modal__close");
+
+/* ---------------------------- Profile elements ---------------------------- */
 const profileName = document.querySelector(".profile__name");
 const profileDescription = document.querySelector(".profile__description");
 const profileInputName = document.querySelector("#profile-input-name");
@@ -53,11 +60,6 @@ const profileInputDescription = document.querySelector(
 );
 
 /* ------------------------------ Card elements ------------------------------ */
-const cardAddButton = document.querySelector("#card-add-button");
-const cardAddModal = document.querySelector("#card-add-modal");
-const cardAddForm = cardAddModal.querySelector(".modal__form");
-const cardAddCloseButton = cardAddModal.querySelector(".modal__close");
-
 const cardTitle = document.querySelector(".card__title");
 const cardImage = document.querySelector(".card__image");
 const cardInputTitle = document.querySelector("#card-input-title");
@@ -85,9 +87,9 @@ function getCardElement(cardData) {
   return cardElement;
 }
 
-function renderCard(cardData) {
+function renderCard(cardData, wrapper) {
   const cardElement = getCardElement(cardData);
-  cardListElement.prepend(cardElement);
+  wrapper.prepend(cardElement);
 }
 
 function profileAutoFillIn() {
@@ -115,11 +117,7 @@ function handleCardAddSubmit(evt) {
   evt.preventDefault();
   const name = cardInputTitle.value;
   const link = cardInputImage.value;
-  const cardElement = getCardElement({
-    name,
-    link,
-  });
-  cardListElement.prepend(cardElement);
+  renderCard({ name, link }, cardListElement);
   closePopup(cardAddModal);
 }
 
@@ -148,7 +146,4 @@ cardAddForm.addEventListener("submit", handleCardAddSubmit);
 //   const card = initialCards[i];
 // }
 
-initialCards.forEach((cardData) => {
-  const cardElement = getCardElement(cardData);
-  cardListElement.prepend(cardElement);
-});
+initialCards.forEach((cardData) => renderCard(cardData, cardListElement));
