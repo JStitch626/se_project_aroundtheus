@@ -67,13 +67,21 @@ const cardAddForm = cardAddModal.querySelector("#card-add-form");
 /*                                  Functions                                 */
 /* -------------------------------------------------------------------------- */
 
-function openPopup() {
-  cardAddModal.classList.add("modal_opened");
+// function openPopup() {
+//   cardAddModal.classList.add("modal_opened");
+// }
+
+// function closePopup() {
+//   profileEditModal.classList.remove("modal_opened");
+//   cardAddModal.classList.remove("modal_opened");
+// }
+
+function openPopup(modal) {
+  modal.classList.add("modal_opened");
 }
 
-function closePopup() {
-  profileEditModal.classList.remove("modal_opened");
-  cardAddModal.classList.remove("modal_opened");
+function closePopup(modal) {
+  modal.classList.remove("modal_opened");
 }
 
 function getCardElement(cardData) {
@@ -89,7 +97,7 @@ function getCardElement(cardData) {
 function profileAutoFillIn() {
   profileInputName.value = profileName.textContent;
   profileInputDescription.value = profileDescription.textContent;
-  profileEditModal.classList.toggle("modal_opened");
+  openPopup(profileEditModal);
 }
 
 function fillProfileForm() {
@@ -104,8 +112,14 @@ function fillProfileForm() {
 function handleProfileEditSubmit(evt) {
   evt.preventDefault();
   fillProfileForm();
-  closePopup();
+  closePopup(profileEditModal);
 }
+
+// function handleProfileEditSubmit(evt) {
+//   evt.preventDefault();
+//   fillProfileForm();
+//   closePopup(profileEditModal);
+// }
 
 /* -------------------------------------------------------------------------- */
 /*                               Event Listeners                              */
@@ -113,11 +127,17 @@ function handleProfileEditSubmit(evt) {
 
 profileEditButton.addEventListener("click", profileAutoFillIn);
 
-cardAddButton.addEventListener("click", openPopup);
+cardAddButton.addEventListener("click", () => {
+  openPopup(cardAddModal);
+});
 
-profileEditCloseButton.addEventListener("click", closePopup);
+profileEditCloseButton.addEventListener("click", () => {
+  closePopup(profileEditModal);
+});
 
-cardAddCloseButton.addEventListener("click", closePopup);
+cardAddCloseButton.addEventListener("click", () => {
+  closePopup(cardAddModal);
+});
 
 profileEditForm.addEventListener("submit", handleProfileEditSubmit);
 
