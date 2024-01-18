@@ -30,6 +30,11 @@ const initialCards = [
   },
 ];
 
+/* -------------------------- Card template element ------------------------- */
+const cardTemplate =
+  document.querySelector("#card-template").content.firstElementChild;
+const cardListElement = document.querySelector(".cards__list");
+
 /* -------------------------------------------------------------------------- */
 /*                                  Elements                                  */
 /* -------------------------------------------------------------------------- */
@@ -46,11 +51,6 @@ const profileInputName = document.querySelector("#profile-input-name");
 const profileInputDescription = document.querySelector(
   "#profile-input-description"
 );
-
-/* -------------------------- Card template element ------------------------- */
-const cardTemplate =
-  document.querySelector("#card-template").content.firstElementChild;
-const cardListElement = document.querySelector(".cards__list");
 
 /* ------------------------------ Card elements ------------------------------ */
 const cardAddButton = document.querySelector("#card-add-button");
@@ -86,7 +86,7 @@ function getCardElement(cardData) {
 }
 
 function renderCard(cardData) {
-  const CardElement = getCardElement(cardData);
+  const cardElement = getCardElement(cardData);
   cardListElement.prepend(cardElement);
 }
 
