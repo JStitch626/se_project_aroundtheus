@@ -44,14 +44,19 @@ const profileEditModal = document.querySelector("#profile-edit-modal");
 const profileEditForm = profileEditModal.querySelector(".modal__form");
 const cardAddModal = document.querySelector("#card-add-modal");
 const cardAddForm = cardAddModal.querySelector(".modal__form");
+const previewImageModal = document.querySelector("#preview-image-modal");
+const previewImage = previewImageModal.querySelector(".card__image_preview");
 
 /* ---------------------------- Buttons ---------------------------- */
 const profileEditButton = document.querySelector("#profile-edit-button");
 const profileEditCloseButton = profileEditModal.querySelector(".modal__close");
 const cardAddButton = document.querySelector("#card-add-button");
 const cardAddCloseButton = cardAddModal.querySelector(".modal__close");
+const previewImageCloseButton =
+  previewImageModal.querySelector(".modal__close");
 
-/* ---------------------------- Profile elements ---------------------------- */
+/* ---------------------------------- Forms --------------------------------- */
+/* Profile form elements */
 const profileName = document.querySelector(".profile__name");
 const profileDescription = document.querySelector(".profile__description");
 const profileInputName = document.querySelector("#profile-input-name");
@@ -59,7 +64,7 @@ const profileInputDescription = document.querySelector(
   "#profile-input-description"
 );
 
-/* ------------------------------ Card elements ------------------------------ */
+/* Card form elements */
 const cardTitle = document.querySelector(".card__title");
 const cardImage = document.querySelector(".card__image");
 const cardInputTitle = document.querySelector("#card-input-title");
@@ -77,6 +82,7 @@ function closePopup(modal) {
   modal.classList.remove("modal_opened");
 }
 
+// Pulls card elements from cardTemplate
 function getCardElement(cardData) {
   // cardData: { name: "...", link: ".."}
   const cardElement = cardTemplate.cloneNode(true);
@@ -84,10 +90,6 @@ function getCardElement(cardData) {
   const cardTitleElement = cardElement.querySelector(".card__title");
   const likeButton = cardElement.querySelector(".card__like-button");
   const deleteButton = cardElement.querySelector(".card__delete-button");
-
-  // add click listener to the cardImage element
-  // openModal with previewImageModal
-  // go to the image element (the preview) and change it with the image source (cardImageElement)
 
   // Step 7/7 - read article; use visibility:hidden NOT display:none
 
@@ -99,11 +101,13 @@ function getCardElement(cardData) {
     cardElement.remove();
   });
 
-  // cardImageElement.addEventListener("click", () => {
-  //   // set the src of the image modal element
-  // set the textContent of the caption element
-  //   openPopup(previewImageModal);
-  // });
+  cardImageElement.addEventListener("click", () => {
+    // set the src of the image modal element
+    // set the textContent of the caption element
+    previewImage.value = card.Datalink;
+    previewImage.textContent = cardData.name;
+    openPopup(previewImageModal);
+  });
 
   cardImageElement.setAttribute("src", cardData.link);
   cardImageElement.setAttribute("alt", cardData.name);

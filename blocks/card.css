@@ -9,6 +9,8 @@
   border-radius: 10px 10px 0px 0px;
 }
 
+/* .card__image_preview {} */
+
 .card__description {
   display: flex;
   background-color: #fff;
