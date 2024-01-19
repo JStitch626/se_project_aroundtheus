@@ -50,7 +50,6 @@ const profileEditButton = document.querySelector("#profile-edit-button");
 const profileEditCloseButton = profileEditModal.querySelector(".modal__close");
 const cardAddButton = document.querySelector("#card-add-button");
 const cardAddCloseButton = cardAddModal.querySelector(".modal__close");
-const cardLikeButton = document.querySelector(".card__like-button");
 
 /* ---------------------------- Profile elements ---------------------------- */
 const profileName = document.querySelector(".profile__name");
@@ -82,9 +81,16 @@ function getCardElement(cardData) {
   const cardElement = cardTemplate.cloneNode(true);
   const cardImageElement = cardElement.querySelector(".card__image");
   const cardTitleElement = cardElement.querySelector(".card__title");
+  const likeButton = cardElement.querySelector(".card__like-button");
+
+  likeButton.addEventListener("click", () => {
+    likeButton.classList.toggle("card__like-button_active");
+  });
+
   cardImageElement.setAttribute("src", cardData.link);
   cardImageElement.setAttribute("alt", cardData.name);
   cardTitleElement.textContent = cardData.name;
+
   return cardElement;
 }
 
@@ -102,14 +108,6 @@ function profileAutoFillIn() {
 function fillProfileForm() {
   profileName.textContent = profileInputName.value;
   profileDescription.textContent = profileInputDescription.value;
-}
-
-function cardLikeActive(evt) {
-  evt.preventDefault();
-  const cardLikeButtonClick = cardLikeButton.querySelector(
-    ".card__like-button_active"
-  );
-  cardLikeButtonClick.classList.toggle(".card__like-button_active");
 }
 
 /* -------------------------------------------------------------------------- */
@@ -150,9 +148,7 @@ cardAddCloseButton.addEventListener("click", () => {
 });
 cardAddForm.addEventListener("submit", handleCardAddSubmit);
 
-// cardLikeButton.addEventListener("click", () => {
-//   cardLikeActive();
-// });
+// likeButtons.addEventListener("click", likeActive);
 
 //Replace 'for' loop with initialCards.forEach
 // for (let i = 0; i < initialCards.length; i++) {
