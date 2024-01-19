@@ -82,6 +82,16 @@ function getCardElement(cardData) {
   const cardImageElement = cardElement.querySelector(".card__image");
   const cardTitleElement = cardElement.querySelector(".card__title");
   const likeButton = cardElement.querySelector(".card__like-button");
+  //find delete button
+
+  // add event listener to the delete button - use position:absolute
+  //cardElement.remove();
+
+  // add click listener to the cardImage element
+  // openModal with previewImageModal
+  // go to the image element (the preview) and change it with the image source (cardImageElement)
+
+  // Step 7/7 - read article; use visibility:hidden NOT display:none
 
   likeButton.addEventListener("click", () => {
     likeButton.classList.toggle("card__like-button_active");
@@ -147,13 +157,6 @@ cardAddCloseButton.addEventListener("click", () => {
   closePopup(cardAddModal);
 });
 cardAddForm.addEventListener("submit", handleCardAddSubmit);
-
-// likeButtons.addEventListener("click", likeActive);
-
-//Replace 'for' loop with initialCards.forEach
-// for (let i = 0; i < initialCards.length; i++) {
-//   const card = initialCards[i];
-// }
 
 initialCards.forEach((cardData) => {
   const cardElement = getCardElement(cardData);
