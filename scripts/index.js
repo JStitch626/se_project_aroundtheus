@@ -78,6 +78,7 @@ function closePopup(modal) {
 }
 
 function getCardElement(cardData) {
+  // cardData: { name: "...", link: ".."}
   const cardElement = cardTemplate.cloneNode(true);
   const cardImageElement = cardElement.querySelector(".card__image");
   const cardTitleElement = cardElement.querySelector(".card__title");
@@ -97,6 +98,12 @@ function getCardElement(cardData) {
   deleteButton.addEventListener("click", () => {
     cardElement.remove();
   });
+
+  // cardImageElement.addEventListener("click", () => {
+  //   // set the src of the image modal element
+  // set the textContent of the caption element
+  //   openPopup(previewImageModal);
+  // });
 
   cardImageElement.setAttribute("src", cardData.link);
   cardImageElement.setAttribute("alt", cardData.name);
