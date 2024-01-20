@@ -46,6 +46,7 @@ const cardAddModal = document.querySelector("#card-add-modal");
 const cardAddForm = cardAddModal.querySelector(".modal__form");
 const previewImageModal = document.querySelector("#preview-image-modal");
 const previewImage = previewImageModal.querySelector(".card__image_preview");
+const previewImageDescription = document.querySelector(".modal__heading_image");
 
 /* ---------------------------- Buttons ---------------------------- */
 const profileEditButton = document.querySelector("#profile-edit-button");
@@ -91,8 +92,6 @@ function getCardElement(cardData) {
   const likeButton = cardElement.querySelector(".card__like-button");
   const deleteButton = cardElement.querySelector(".card__delete-button");
 
-  // Step 7/7 - read article; use visibility:hidden NOT display:none
-
   likeButton.addEventListener("click", () => {
     likeButton.classList.toggle("card__like-button_active");
   });
@@ -102,10 +101,9 @@ function getCardElement(cardData) {
   });
 
   cardImageElement.addEventListener("click", () => {
-    // set the src of the image modal element
-    // set the textContent of the caption element
-    previewImage.value = cardData.link;
-    previewImage.textContent = cardData.name;
+    previewImage.src = cardData.link;
+    previewImage.alt = cardData.name;
+    previewImageDescription.textContent = cardData.name;
     openPopup(previewImageModal);
   });
 

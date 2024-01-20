@@ -12,6 +12,8 @@
 /* popup imageModal */
 .card__image_preview {
   margin: auto;
+  width: 100%;
+  height: 100%;
   max-width: 75vw;
   max-height: 75vh;
   border-radius: 0px;
