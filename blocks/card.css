@@ -9,7 +9,12 @@
   border-radius: 10px 10px 0px 0px;
 }
 
-/* .card__image_preview {} */
+/* popup imageModal */
+.card__image_preview {
+  max-width: 75vw;
+  max-height: 75vh;
+  border-radius: 0px;
+}
 
 .card__description {
   display: flex;
