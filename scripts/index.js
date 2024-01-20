@@ -104,9 +104,13 @@ function getCardElement(cardData) {
   cardImageElement.addEventListener("click", () => {
     // set the src of the image modal element
     // set the textContent of the caption element
-    previewImage.value = card.Datalink;
+    previewImage.value = cardData.link;
     previewImage.textContent = cardData.name;
     openPopup(previewImageModal);
+  });
+
+  previewImageCloseButton.addEventListener("click", () => {
+    closePopup(previewImageModal);
   });
 
   cardImageElement.setAttribute("src", cardData.link);
