@@ -32,8 +32,6 @@
 }
 
 .modal__container_preview-image {
-  max-width: 75vw;
-  max-height: 75vh;
   border-radius: 0px;
 }
 

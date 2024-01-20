@@ -109,10 +109,6 @@ function getCardElement(cardData) {
     openPopup(previewImageModal);
   });
 
-  previewImageCloseButton.addEventListener("click", () => {
-    closePopup(previewImageModal);
-  });
-
   cardImageElement.setAttribute("src", cardData.link);
   cardImageElement.setAttribute("alt", cardData.name);
   cardTitleElement.textContent = cardData.name;
@@ -174,6 +170,12 @@ cardAddCloseButton.addEventListener("click", () => {
 });
 cardAddForm.addEventListener("submit", handleCardAddSubmit);
 
+/* ---------------------- preview image event listener ---------------------- */
+previewImageCloseButton.addEventListener("click", () => {
+  closePopup(previewImageModal);
+});
+
+/* ------------------------------ Initial cards ----------------------------- */
 initialCards.forEach((cardData) => {
   const cardElement = getCardElement(cardData);
   cardListElement.append(cardElement);
