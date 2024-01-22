@@ -55,6 +55,8 @@ const cardAddButton = document.querySelector("#card-add-button");
 const cardAddCloseButton = cardAddModal.querySelector(".modal__close");
 const previewImageCloseButton =
   previewImageModal.querySelector(".modal__close");
+// find all close buttons
+const closeButtons = document.querySelectorAll(".modal__close");
 
 /* ---------------------------------- Forms --------------------------------- */
 /* Profile form elements */
@@ -152,26 +154,35 @@ function handleCardAddSubmit(evt) {
 /* -------------------------------------------------------------------------- */
 /*                               Event Listeners                              */
 /* -------------------------------------------------------------------------- */
+
+// reviewer suggestion - universal handler for any close buttons
+closeButtons.forEach((button) => {
+  // find the closest popup
+  const modal = button.closest(".modal");
+  // set the listener
+  button.addEventListener("click", () => closePopup(modal));
+});
+
 /* ------------------------- profile event listeners ------------------------ */
 profileEditButton.addEventListener("click", openProfileModal);
-profileEditCloseButton.addEventListener("click", () => {
-  closePopup(profileEditModal);
-});
+// profileEditCloseButton.addEventListener("click", () => {
+//   closePopup(profileEditModal);
+// });
 profileEditForm.addEventListener("submit", handleProfileEditSubmit);
 
 /* -------------------------- card event listeners -------------------------- */
 cardAddButton.addEventListener("click", () => {
   openPopup(cardAddModal);
 });
-cardAddCloseButton.addEventListener("click", () => {
-  closePopup(cardAddModal);
-});
+// cardAddCloseButton.addEventListener("click", () => {
+//   closePopup(cardAddModal);
+// });
 cardAddForm.addEventListener("submit", handleCardAddSubmit);
 
 /* ---------------------- preview image event listener ---------------------- */
-previewImageCloseButton.addEventListener("click", () => {
-  closePopup(previewImageModal);
-});
+// previewImageCloseButton.addEventListener("click", () => {
+//   closePopup(previewImageModal);
+// });
 
 /* ------------------------------ Initial cards ----------------------------- */
 initialCards.forEach((cardData) => {
