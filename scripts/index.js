@@ -50,12 +50,7 @@ const previewImageDescription = document.querySelector(".modal__heading_image");
 
 /* ---------------------------- Buttons ---------------------------- */
 const profileEditButton = document.querySelector("#profile-edit-button");
-// const profileEditCloseButton = profileEditModal.querySelector(".modal__close");
 const cardAddButton = document.querySelector("#card-add-button");
-// const cardAddCloseButton = cardAddModal.querySelector(".modal__close");
-// const previewImageCloseButton =
-//   previewImageModal.querySelector(".modal__close");
-
 // per reviewer - find all close buttons
 const closeButtons = document.querySelectorAll(".modal__close");
 
@@ -166,24 +161,14 @@ closeButtons.forEach((button) => {
 
 /* ------------------------- profile event listeners ------------------------ */
 profileEditButton.addEventListener("click", openProfileModal);
-// profileEditCloseButton.addEventListener("click", () => {
-//   closePopup(profileEditModal);
-// });
+
 profileEditForm.addEventListener("submit", handleProfileEditSubmit);
 
 /* -------------------------- card event listeners -------------------------- */
 cardAddButton.addEventListener("click", () => {
   openPopup(cardAddModal);
 });
-// cardAddCloseButton.addEventListener("click", () => {
-//   closePopup(cardAddModal);
-// });
 cardAddForm.addEventListener("submit", handleCardAddSubmit);
-
-/* ---------------------- preview image event listener ---------------------- */
-// previewImageCloseButton.addEventListener("click", () => {
-//   closePopup(previewImageModal);
-// });
 
 /* ------------------------------ Initial cards ----------------------------- */
 initialCards.forEach((cardData) => {
