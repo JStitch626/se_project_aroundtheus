@@ -61,7 +61,7 @@ By clicking the "Edit" button, the end user can now manipulate the name and desc
 
 ### Code Enhancements
 
-- created separate functions for `profileAutoFillIn` and `fillProfileForm` and called the functions in the `addEventListener`
+- created separate functions for `openProfileModal` and `setProfileData` and called the functions in the `addEventListener`
 
 ---
 

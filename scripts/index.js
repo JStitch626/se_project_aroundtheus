@@ -119,13 +119,13 @@ function renderCard(cardData, wrapper) {
   wrapper.prepend(cardElement);
 }
 
-function profileAutoFillIn() {
+function openProfileModal() {
   profileInputName.value = profileName.textContent;
   profileInputDescription.value = profileDescription.textContent;
   openPopup(profileEditModal);
 }
 
-function fillProfileForm() {
+function setProfileData() {
   profileName.textContent = profileInputName.value;
   profileDescription.textContent = profileInputDescription.value;
 }
@@ -136,7 +136,7 @@ function fillProfileForm() {
 
 function handleProfileEditSubmit(evt) {
   evt.preventDefault();
-  fillProfileForm();
+  setProfileData();
   closePopup(profileEditModal);
 }
 
@@ -145,15 +145,15 @@ function handleCardAddSubmit(evt) {
   const name = cardInputTitle.value;
   const link = cardInputImage.value;
   renderCard({ name, link }, cardListElement);
+  evt.target.reset();
   closePopup(cardAddModal);
 }
 
 /* -------------------------------------------------------------------------- */
 /*                               Event Listeners                              */
 /* -------------------------------------------------------------------------- */
-
 /* ------------------------- profile event listeners ------------------------ */
-profileEditButton.addEventListener("click", profileAutoFillIn);
+profileEditButton.addEventListener("click", openProfileModal);
 profileEditCloseButton.addEventListener("click", () => {
   closePopup(profileEditModal);
 });
