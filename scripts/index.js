@@ -50,12 +50,13 @@ const previewImageDescription = document.querySelector(".modal__heading_image");
 
 /* ---------------------------- Buttons ---------------------------- */
 const profileEditButton = document.querySelector("#profile-edit-button");
-const profileEditCloseButton = profileEditModal.querySelector(".modal__close");
+// const profileEditCloseButton = profileEditModal.querySelector(".modal__close");
 const cardAddButton = document.querySelector("#card-add-button");
-const cardAddCloseButton = cardAddModal.querySelector(".modal__close");
-const previewImageCloseButton =
-  previewImageModal.querySelector(".modal__close");
-// find all close buttons
+// const cardAddCloseButton = cardAddModal.querySelector(".modal__close");
+// const previewImageCloseButton =
+//   previewImageModal.querySelector(".modal__close");
+
+// per reviewer - find all close buttons
 const closeButtons = document.querySelectorAll(".modal__close");
 
 /* ---------------------------------- Forms --------------------------------- */
