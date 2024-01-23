@@ -54,11 +54,10 @@ By clicking the "Edit" button, the end user can now manipulate the name and desc
   - line 91 `@media screen and (max-width: 630px)` for `.modal__container` - same reason as above
 
 - index.html
-
-- line 61 add `type` to button element
-- line 62 change `<p>` to `<h2>`
-- line 69 change modifiers from boolean to key-value type
-- for both inputs name and description, changed modifier to `.form__input_profile-input_modifier-value`
+  - line 61 add `type` to button element
+  - line 62 change `<p>` to `<h2>`
+  - line 69 change modifiers from boolean to key-value type
+  - for both inputs name and description, changed modifier to `.form__input_profile-input_modifier-value`
 
 ### Code Enhancements
 
