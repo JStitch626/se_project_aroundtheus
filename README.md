@@ -53,7 +53,7 @@ By clicking the "Edit" button, the end user can now manipulate the name and desc
   - line 57, `.modal__heading` remove fixed height; text elements do not need fixed height
   - line 91 `@media screen and (max-width: 630px)` for `.modal__container` - same reason as above
 
--index.html
+- index.html
 
 - line 61 add `type` to button element
 - line 62 change `<p>` to `<h2>`
@@ -74,7 +74,7 @@ This project exhibits a webpage with an adaptive design. Incorporating lessons f
 - 800px tablet
 - 320px mobile phone
 
-Unlike the previous sprints that were divided into stages with briefs, we received only a general overview and the Figma design and had to create everything from scratch.
+Unlike the previous sprints which were divided into stages with briefs, we received only a general overview and the Figma design and had to create everything from scratch.
 
 ### Code corrections
 
