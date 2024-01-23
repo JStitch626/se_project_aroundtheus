@@ -21,10 +21,11 @@ To read about the progression of this project from its humble beginnings, scroll
 - Figma layout
 - JavaScript
 - Create a popup form to add new cards
-- Develop a feature that allows users to add custom cards
-- Code the "Like" button to change color when user clicks it
+- Retrieve content from an array and add it to the page using JavaScript
+- Develop a feature that allows users to add custom cards by completing the form
+- Code the "Like" button to change color when the user clicks it
 - Add a delete icon to the cards
-- Make the buttons work by writing the code needed
+- Make all the buttons functional by writing the code needed
 - Open and close the picture modal when the user clicks the picture or the "Close" button respectively
 - Make the modal box smoothly open from and close to transparency
 - Update the README.md file
