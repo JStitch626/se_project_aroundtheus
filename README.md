@@ -20,14 +20,14 @@ To read about the progression of this project from its humble beginnings, scroll
 - CSS media queries
 - Figma layout
 - JavaScript
-- Create a popup form to add new cards
+- Allow users to edit the profile content
 - Retrieve content from an array and add it to the page using JavaScript
-- Develop a feature that allows users to add custom cards by completing the form
+- Develop a feature that allows users to add custom cards by completing a popup form
 - Code the "Like" button to change color when the user clicks it
-- Add a delete icon to the cards
-- Make all the buttons functional by writing the code needed
+- Add a delete icon to the cards, allowing users to remove cards from the page
+- Make all the buttons functional by writing the necessary code
 - Open and close the picture modal when the user clicks the picture or the "Close" button respectively
-- Make the modal box smoothly open from and close to transparency
+- Create a smooth transition for the modal boxes to open from and close to transparency
 - Update the README.md file
 - Use git branch
 - Deploy the project to Github Pages
