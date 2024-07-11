@@ -107,8 +107,7 @@
 
 .modal__button_inactive {
   background-color: #fff;
-  border-color: #000;
-  border-width: 1px;
+  border: 1px solid #000;
   border-style: solid;
   color: #000;
   opacity: 0.2;

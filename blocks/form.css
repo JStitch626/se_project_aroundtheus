@@ -29,8 +29,21 @@
   color: rgba(0, 0, 0, 0.4);
 }
 
-.form__input:invalid {
+/* .form__input:invalid {
   border-bottom: 1px solid #ff0000;
+} */
+
+.form__input_type_error {
+  border-bottom: 1px solid #ff0000;
+}
+
+.form__input-error {
+  color: #ff0000;
+  opacity: 0;
+}
+
+.form__input-error_active {
+  opacity: 1;
 }
 
 @media screen and (max-width: 630px) {
