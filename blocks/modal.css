@@ -91,7 +91,8 @@
   margin: 48px auto 0;
   padding: 0;
   border-radius: 2px;
-  border: none;
+  /* border: none; */
+  border: hidden;
   color: #fff;
   text-align: center;
   font-size: 18px;
@@ -102,6 +103,15 @@
 
 .modal__button:hover {
   opacity: 0.8;
+}
+
+.modal__button_inactive {
+  background-color: #fff;
+  border-color: #000;
+  border-width: 1px;
+  border-style: solid;
+  color: #000;
+  opacity: 0.2;
 }
 
 @media screen and (max-width: 630px) {
