@@ -81,6 +81,7 @@
               maxlength="40"
               required
             />
+            <span class="profile-input-name-error form__input-error"></span>
             <label class="form__label" for="profile-input-description"></label>
             <input
               type="text"
@@ -92,6 +93,9 @@
               maxlength="200"
               required
             />
+            <span
+              class="profile-input-description-error form__input-error"
+            ></span>
           </fieldset>
           <button type="submit" class="modal__button" id="profile-save-button">
             Save
@@ -121,6 +125,7 @@
               maxlength="30"
               required
             />
+            <span class="card-input-title-error form__input-error"></span>
             <label class="form__label" for="card-input-image-url"></label>
             <input
               type="url"
@@ -130,6 +135,7 @@
               placeholder="Image URL"
               required
             />
+            <span class="card-input-image-url-error form__input-error"></span>
           </fieldset>
           <button type="submit" class="modal__button" id="card-save-button">
             Create

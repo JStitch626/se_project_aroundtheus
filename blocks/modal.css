@@ -108,7 +108,6 @@
 .modal__button_inactive {
   background-color: #fff;
   border: 1px solid #000;
-  border-style: solid;
   color: #000;
   opacity: 0.2;
 }

@@ -1,38 +1,58 @@
 /* -------------------------------------------------------------------------- */
 /*                                  Elements                                  */
 /* -------------------------------------------------------------------------- */
+
 const formElement = document.querySelector(".form");
 const formInput = document.querySelector(".form__input");
-const formError = formElement.querySelector(`.${formInput.id}-error`);
 
 /* -------------------------------------------------------------------------- */
-/*                                  Event Handlers                                 */
+/*                                  Functions                                 */
 /* -------------------------------------------------------------------------- */
 
-const showInputError = (element) => {
-  element.classList.add("form__input_type_error");
-  formError.classList.add("form__input-error_active");
+const checkInputValidity = (formElement, inputElement) => {
+  if (!inputElement.validity.valid) {
+    showInputError(formElement, inputElement, inputElement.validationMessage);
+  } else {
+    hideInputError(formElement, inputElement);
+  }
 };
 
-const hideInputError = (element) => {
-  element.classList.remove("form__input_type_error");
-  formError.classList.remove("form__input-error_active");
+function setEventListeners(formElement, validationObject) {}
+
+const enableValidation = (validationObject) => {
+  const formList = Array.from(document.querySelectorAll(".form"));
+  formList.forEach((formElement) => {
+    formElement.addEventListener("submit", () => {
+      evt.preventDefault();
+    });
+
+    setEventListeners(formElement, validationObject);
+    // look for all inputs inside form
+    // loop through all inputs to see if all are valid
+    // if input !valid
+    // get validation message
+    // add error class to input
+    // display error message
+    // disable button
+    // if all inputs are valid
+    // enable button
+    // reset error messages
+  });
 };
-/* -------------------------------------------------------------------------- */
-/*                               Event Listeners                              */
-/* -------------------------------------------------------------------------- */
-formElement.addEventListener("submit", () => {
-  evt.preventDefault();
-});
 
-formInput.addEventListener("input", () => {
-  evt.target.validity.valid;
-});
-
-/* -------------------------------------------------------------------------- */
+// enabling validation by calling enableValidation()
 // pass all the settings on call
+// enableValidation({
+//   formSelector: ".popup__form",
+//   inputSelector: ".popup__input",
+//   submitButtonSelector: ".popup__button",
+//   inactiveButtonClass: "popup__button_disabled",
+//   inputErrorClass: "popup__input_type_error",
+//   errorClass: "popup__error_visible",
+// });
+// the code below is the same as calling the enableValidation() fn above; puts the object in a variable
 
-const enableValidation = {
+const validationObject = {
   formSelector: ".popup__form",
   inputSelector: ".popup__input",
   submitButtonSelector: ".popup__button",
@@ -41,6 +61,46 @@ const enableValidation = {
   errorClass: "popup__error_visible",
 };
 
-// const checkInputValidity = ();
+enableValidation(validationObject);
+
 // const hasInvalidInput = ();
 // const toggleButtonState = ();
+
+/* -------------------------------------------------------------------------- */
+/*                                  Event Handlers                            */
+/* -------------------------------------------------------------------------- */
+
+const showInputError = (formElement, inputElement, errorMessage) => {
+  const formError = formElement.querySelector(`.${inputElement.id}-error`);
+  inputElement.classList.add("form__input_type_error");
+  formError.textContent = errorMessage;
+  formError.classList.add("form__input-error_active");
+};
+
+const hideInputError = (formElement, inputElement) => {
+  const formError = formElement.querySelector(`.${inputElement.id}-error`);
+  inputElement.classList.remove("form__input_type_error");
+  formError.classList.remove("form__input-error_active");
+  formError.textContent = "";
+};
+
+const setEventListeners = (formElement) => {
+  const formInputList = Array.from(
+    formElement.querySelectorAll(".form__input")
+  );
+
+  formInputList.forEach((inputElement) => {
+    inputElement.addEventListener("input", () => {
+      checkInputValidity(formElement, inputElement);
+    });
+  });
+};
+
+/* -------------------------------------------------------------------------- */
+/*                               Event Listeners                              */
+/* -------------------------------------------------------------------------- */
+formElement.addEventListener("submit", () => {
+  evt.preventDefault();
+});
+
+formInput.addEventListener("input", checkInputValidity);
