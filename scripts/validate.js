@@ -9,17 +9,28 @@ const formInput = document.querySelector(".form__input");
 /*                                  Functions                                 */
 /* -------------------------------------------------------------------------- */
 
-const checkInputValidity = (formElement, inputElement) => {
+function checkInputValidity(formElement, inputElement) {
   if (!inputElement.validity.valid) {
     showInputError(formElement, inputElement, inputElement.validationMessage);
   } else {
     hideInputError(formElement, inputElement);
   }
-};
+}
 
-function setEventListeners(formElement, validationObject) {}
+function setEventListeners(formElement, validationObject) {
+  // look for all inputs inside form
+  // loop through all inputs to see if all are valid
+  // if input !valid
+  // get validation message
+  // add error class to input
+  // display error message
+  // disable button
+  // if all inputs are valid
+  // enable button
+  // reset error messages
+}
 
-const enableValidation = (validationObject) => {
+function enableValidation(validationObject) {
   const formList = Array.from(document.querySelectorAll(".form"));
   formList.forEach((formElement) => {
     formElement.addEventListener("submit", () => {
@@ -27,18 +38,8 @@ const enableValidation = (validationObject) => {
     });
 
     setEventListeners(formElement, validationObject);
-    // look for all inputs inside form
-    // loop through all inputs to see if all are valid
-    // if input !valid
-    // get validation message
-    // add error class to input
-    // display error message
-    // disable button
-    // if all inputs are valid
-    // enable button
-    // reset error messages
   });
-};
+}
 
 // enabling validation by calling enableValidation()
 // pass all the settings on call
@@ -70,21 +71,21 @@ enableValidation(validationObject);
 /*                                  Event Handlers                            */
 /* -------------------------------------------------------------------------- */
 
-const showInputError = (formElement, inputElement, errorMessage) => {
+function showInputError(formElement, inputElement, errorMessage) {
   const formError = formElement.querySelector(`.${inputElement.id}-error`);
   inputElement.classList.add("form__input_type_error");
   formError.textContent = errorMessage;
   formError.classList.add("form__input-error_active");
-};
+}
 
-const hideInputError = (formElement, inputElement) => {
+function hideInputError(formElement, inputElement) {
   const formError = formElement.querySelector(`.${inputElement.id}-error`);
   inputElement.classList.remove("form__input_type_error");
   formError.classList.remove("form__input-error_active");
   formError.textContent = "";
-};
+}
 
-const setEventListeners = (formElement) => {
+function setEventListeners(formElement) {
   const formInputList = Array.from(
     formElement.querySelectorAll(".form__input")
   );
@@ -94,7 +95,7 @@ const setEventListeners = (formElement) => {
       checkInputValidity(formElement, inputElement);
     });
   });
-};
+}
 
 /* -------------------------------------------------------------------------- */
 /*                               Event Listeners                              */
