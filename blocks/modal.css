@@ -111,6 +111,9 @@
   color: #000;
   opacity: 0.2;
 }
+.modal__button_inactive:hover {
+  opacity: 0.2;
+}
 
 @media screen and (max-width: 630px) {
   .modal__container {

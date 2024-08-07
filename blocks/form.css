@@ -42,7 +42,7 @@
   opacity: 0;
 }
 
-.form__input-error_active {
+.form__input-error_visible {
   opacity: 1;
 }
 
