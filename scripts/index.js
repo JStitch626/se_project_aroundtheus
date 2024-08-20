@@ -138,20 +138,31 @@ function handleProfileEditSubmit(evt) {
   closePopup(profileEditModal);
 }
 
+// checkInputValidity,enableSubmitButton,disableSubmitButton are not referenced in index.js.
+//They are in validate.js
 function handleCardAddSubmit(evt) {
   evt.preventDefault();
+  // Ensure form validation before grabbing values
+  const form = evt.currentTarget;
+  if (form.checkInputValidity(formSelector, inputSelector)) {
+    enableSubmitButton(formSelector);
+  } else {
+    disableSubmitButton(formSelector);
+  }
   const name = cardInputTitle.value;
   const link = cardInputImage.value;
+
   renderCard({ name, link }, cardListElement);
-  evt.target.reset();
+
   closePopup(cardAddModal);
+  evt.target.reset();
 }
 
 /* -------------------------------------------------------------------------- */
 /*                               Event Listeners                              */
 /* -------------------------------------------------------------------------- */
 
-// reviewer suggestion - universal handler for any close buttons
+// universal handler for any close buttons
 closeButtons.forEach((button) => {
   // find the closest popup
   const modal = button.closest(".modal");
