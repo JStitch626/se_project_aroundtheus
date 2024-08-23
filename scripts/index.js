@@ -144,9 +144,15 @@ function handleCardAddSubmit(evt) {
   evt.preventDefault();
   // Ensure form validation before grabbing values
   const form = evt.currentTarget;
-  if (form.checkInputValidity(formSelector, inputSelector)) {
+  console.log(
+    "hey here is your inputvalidity => ",
+    checkInputValidity(formSelector, inputSelector)
+  );
+  if (checkInputValidity(formSelector, inputSelector)) {
+    console.log("hey is this supposed to be enabled");
     enableSubmitButton(formSelector);
   } else {
+    console.log("hey is this still disbaled");
     disableSubmitButton(formSelector);
   }
   const name = cardInputTitle.value;

@@ -105,13 +105,14 @@
   opacity: 0.8;
 }
 
-.modal__button_inactive {
+.modal__button_disabled {
   background-color: #fff;
   border: 1px solid #000;
   color: #000;
   opacity: 0.2;
 }
-.modal__button_inactive:hover {
+
+.modal__button_disabled:hover {
   opacity: 0.2;
 }
 

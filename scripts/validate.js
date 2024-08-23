@@ -3,8 +3,8 @@
 /* -------------------------------------------------------------------------- */
 
 const formSelector = document.querySelector(".form");
-const inputSelector = document.querySelector(".form__input");
-const buttonElement = document.querySelector(".modal__button");
+const inputSelector = formSelector.querySelector(".form__input");
+// const buttonElement = formSelector.querySelector(".modal__button");
 
 /* -------------------------------------------------------------------------- */
 /*                                  Functions                                 */
@@ -29,15 +29,19 @@ function hasInvalidInput(formList) {
 }
 
 function toggleButtonState(formList, buttonElement) {
+  console.log(hasInvalidInput(formList));
   if (hasInvalidInput(formList)) {
-    buttonElement.classList.add("modal__button_inactive");
+    buttonElement.classList.add("modal__button_disabled");
   } else {
-    buttonElement.classList.remove("modal__button_inactive");
+    buttonElement.classList.remove("modal__button_disabled");
   }
 }
 
 function setEventListeners(formSelector) {
+  //Find all the form fields and make an array of them
   const inputList = Array.from(formSelector.querySelectorAll(".form__input"));
+  const buttonElement = formSelector.querySelector(".modal__button");
+
   inputList.forEach((inputSelector) => {
     inputSelector.addEventListener("input", () => {
       checkInputValidity(formSelector, inputSelector);
@@ -84,7 +88,7 @@ const validationObject = {
   formSelector: ".form",
   inputSelector: ".form__input",
   submitButtonSelector: ".modal__button",
-  inactiveButtonClass: "modal__button_inactive",
+  inactiveButtonClass: "modal__button_disabled",
   inputErrorClass: "form__input_type_error",
   errorClass: "form__input-error_visible",
 };
@@ -113,19 +117,19 @@ function hideInputError(formSelector, inputSelector) {
 function disableSubmitButton(formSelector) {
   const buttonElement = formSelector.querySelector(".modal__button");
   buttonElement.disabled = true;
-  buttonElement.classList.add("modal__button_inactive");
+  buttonElement.classList.add("modal__button_disabled");
 }
 
 function enableSubmitButton(formSelector) {
   const buttonElement = formSelector.querySelector(".modal__button");
   buttonElement.disabled = false;
-  buttonElement.classList.remove("modal__button_inactive");
+  buttonElement.classList.remove("modal__button_disabled");
 }
 
 /* -------------------------------------------------------------------------- */
 /*                               Event Listeners                              */
 /* -------------------------------------------------------------------------- */
-formSelector.addEventListener("submit", () => {
+formSelector.addEventListener("submit", (evt) => {
   evt.preventDefault();
 });
 //refer to Ch6.L6
@@ -138,7 +142,7 @@ formSelector.addEventListener("reset", () => {
 formSelector.addEventListener("input", (evt) => {
   const form = evt.currentTarget;
 
-  if (form.checkInputValidity(formSelector, inputSelector)) {
+  if (checkInputValidity(formSelector, inputSelector)) {
     enableSubmitButton(formSelector);
   } else {
     disableSubmitButton(formSelector);
