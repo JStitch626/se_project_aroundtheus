@@ -102,8 +102,8 @@
 }
 
 .modal__button:hover {
-  /* opacity: 0.8; */
-  background-color: blue;
+  opacity: 0.8;
+  /* background-color: blue; */
 }
 
 .modal__button_disabled {

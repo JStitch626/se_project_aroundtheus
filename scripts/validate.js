@@ -4,7 +4,6 @@
 
 const formSelector = document.querySelector(".form");
 const inputSelector = formSelector.querySelector(".form__input");
-// const buttonElement = formSelector.querySelector(".modal__button");
 
 /* -------------------------------------------------------------------------- */
 /*                                  Functions                                 */
@@ -30,26 +29,27 @@ function hasInvalidInput(formList) {
   });
 }
 
-const toggleButtonState = (formList, buttonElement) => {
-  if (hasInvalidInput(formList)) {
-    disableSubmitButton(formSelector);
-  } else {
-    enableSubmitButton(formSelector);
-  }
-};
+// const toggleButtonState = (formList, submitButtonSelector) => {
+//   if (hasInvalidInput(formList)) {
+//     disableSubmitButton(formSelector);
+//   } else {
+//     enableSubmitButton(formSelector);
+//   }
+// };
 
 function setEventListeners(formSelector) {
   //Find all the form fields and make an array of them
   const inputList = Array.from(formSelector.querySelectorAll(".form__input"));
-  const buttonElement = formSelector.querySelector(".modal__button");
+  const submitButtonSelector = formSelector.querySelector(".modal__button");
 
   inputList.forEach((inputSelector) => {
     inputSelector.addEventListener("input", () => {
       checkInputValidity(formSelector, inputSelector);
-      toggleButtonState(inputList, buttonElement);
+      toggleButtonState(inputList, submitButtonSelector);
     });
   });
 }
+
 // function setEventListeners(formSelector, validationObject) {
 // look for all inputs inside form
 // loop through all inputs to see if all are valid
@@ -116,15 +116,23 @@ function hideInputError(formSelector, inputSelector) {
 
 //Source: Discord - Prevent blank cards from being added
 function disableSubmitButton(formSelector) {
-  const buttonElement = formSelector.querySelector(".modal__button");
-  buttonElement.disabled = true;
-  buttonElement.classList.add("modal__button_disabled");
+  const submitButtonSelector = formSelector.querySelector(".modal__button");
+  submitButtonSelector.disabled = true;
+  submitButtonSelector.classList.add("modal__button_disabled");
 }
 
 function enableSubmitButton(formSelector) {
-  const buttonElement = formSelector.querySelector(".modal__button");
-  buttonElement.disabled = false;
-  buttonElement.classList.remove("modal__button_disabled");
+  const submitButtonSelector = formSelector.querySelector(".modal__button");
+  submitButtonSelector.disabled = false;
+  submitButtonSelector.classList.remove("modal__button_disabled");
+}
+
+function toggleButtonState(formList, submitButtonSelector) {
+  if (hasInvalidInput(formList)) {
+    disableSubmitButton(formSelector);
+  } else {
+    enableSubmitButton(formSelector);
+  }
 }
 
 /* -------------------------------------------------------------------------- */
@@ -140,13 +148,13 @@ formSelector.addEventListener("reset", () => {
   disableSubmitButton(formSelector);
 });
 
-formSelector.addEventListener("input", (evt) => {
-  const form = evt.currentTarget;
-  console.log(evt);
-  console.log(form);
-  if (checkInputValidity(formSelector, inputSelector)) {
-    enableSubmitButton(formSelector);
-  } else {
-    disableSubmitButton(formSelector);
-  }
-});
+// formSelector.addEventListener("input", (evt) => {
+//   const form = evt.currentTarget;
+//   console.log(evt);
+//   console.log(form);
+//   if (checkInputValidity(formSelector, inputSelector)) {
+//     enableSubmitButton(formSelector);
+//   } else {
+//     disableSubmitButton(formSelector);
+//   }
+// });

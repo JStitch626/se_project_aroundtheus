@@ -138,8 +138,6 @@ function handleProfileEditSubmit(evt) {
   closePopup(profileEditModal);
 }
 
-// checkInputValidity,enableSubmitButton,disableSubmitButton are not referenced in index.js.
-//They are in validate.js
 function handleCardAddSubmit(evt) {
   evt.preventDefault();
   // Ensure form validation before grabbing values
