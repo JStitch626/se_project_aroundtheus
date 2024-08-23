@@ -17,8 +17,10 @@ function checkInputValidity(formSelector, inputSelector) {
       inputSelector,
       inputSelector.validationMessage
     );
+    return false;
   } else {
     hideInputError(formSelector, inputSelector);
+    return true;
   }
 }
 
@@ -28,14 +30,13 @@ function hasInvalidInput(formList) {
   });
 }
 
-function toggleButtonState(formList, buttonElement) {
-  console.log(hasInvalidInput(formList));
+const toggleButtonState = (formList, buttonElement) => {
   if (hasInvalidInput(formList)) {
-    buttonElement.classList.add("modal__button_disabled");
+    disableSubmitButton(formSelector);
   } else {
-    buttonElement.classList.remove("modal__button_disabled");
+    enableSubmitButton(formSelector);
   }
-}
+};
 
 function setEventListeners(formSelector) {
   //Find all the form fields and make an array of them
@@ -141,7 +142,8 @@ formSelector.addEventListener("reset", () => {
 
 formSelector.addEventListener("input", (evt) => {
   const form = evt.currentTarget;
-
+  console.log(evt);
+  console.log(form);
   if (checkInputValidity(formSelector, inputSelector)) {
     enableSubmitButton(formSelector);
   } else {

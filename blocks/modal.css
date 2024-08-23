@@ -102,7 +102,8 @@
 }
 
 .modal__button:hover {
-  opacity: 0.8;
+  /* opacity: 0.8; */
+  background-color: blue;
 }
 
 .modal__button_disabled {
@@ -114,6 +115,7 @@
 
 .modal__button_disabled:hover {
   opacity: 0.2;
+  /* background-color: blue; */
 }
 
 @media screen and (max-width: 630px) {
