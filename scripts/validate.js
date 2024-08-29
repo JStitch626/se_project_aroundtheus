@@ -2,8 +2,8 @@
 /*                                  Elements                                  */
 /* -------------------------------------------------------------------------- */
 
-const formSelector = document.querySelector(".form");
-const inputSelector = formSelector.querySelector(".form__input");
+// const formSelector = document.querySelector(".form");
+// const inputSelector = formSelector.querySelector(".form__input");
 
 /* -------------------------------------------------------------------------- */
 /*                                  Functions                                 */
@@ -29,23 +29,32 @@ function hasInvalidInput(formList) {
   });
 }
 
-// const toggleButtonState = (formList, submitButtonSelector) => {
-//   if (hasInvalidInput(formList)) {
-//     disableSubmitButton(formSelector);
-//   } else {
-//     enableSubmitButton(formSelector);
-//   }
-// };
+function toggleButtonState(formList, submitButtonSelector) {
+  const submitButtonSelector = formSelector.querySelector(".modal__button");
+  if (hasInvalidInput(formList)) {
+    disableSubmitButton(formSelector);
+  } else {
+    enableSubmitButton(formSelector);
+  }
+}
 
 function setEventListeners(formSelector) {
   //Find all the form fields and make an array of them
   const inputList = Array.from(formSelector.querySelectorAll(".form__input"));
-  const submitButtonSelector = formSelector.querySelector(".modal__button");
+  const submitButtons = Array.from(
+    formSelector.querySelectorAll(".modal__button")
+  );
 
   inputList.forEach((inputSelector) => {
     inputSelector.addEventListener("input", () => {
       checkInputValidity(formSelector, inputSelector);
+    });
+  });
+
+  submitButtons.forEach((submitButtonSelector) => {
+    inputSelector.addEventListener("input", () => {
       toggleButtonState(inputList, submitButtonSelector);
+      //broke the save button
     });
   });
 }
@@ -125,14 +134,6 @@ function enableSubmitButton(formSelector) {
   const submitButtonSelector = formSelector.querySelector(".modal__button");
   submitButtonSelector.disabled = false;
   submitButtonSelector.classList.remove("modal__button_disabled");
-}
-
-function toggleButtonState(formList, submitButtonSelector) {
-  if (hasInvalidInput(formList)) {
-    disableSubmitButton(formSelector);
-  } else {
-    enableSubmitButton(formSelector);
-  }
 }
 
 /* -------------------------------------------------------------------------- */
