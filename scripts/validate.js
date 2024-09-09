@@ -17,7 +17,7 @@ function checkInputValidity(formElement, inputElement) {
   }
 }
 
-function setEventListeners(formElement, validationObject) {
+function setEventListeners(formElement, config) {
   // look for all inputs inside form
   // loop through all inputs to see if all are valid
   // if input !valid
@@ -30,14 +30,14 @@ function setEventListeners(formElement, validationObject) {
   // reset error messages
 }
 
-function enableValidation(validationObject) {
+function enableValidation(config) {
   const formList = Array.from(document.querySelectorAll(".form"));
   formList.forEach((formElement) => {
     formElement.addEventListener("submit", () => {
-      evt.preventDefault();
+      e.preventDefault();
     });
 
-    setEventListeners(formElement, validationObject);
+    setEventListeners(formElement, config);
   });
 }
 
@@ -53,7 +53,7 @@ function enableValidation(validationObject) {
 // });
 // the code below is the same as calling the enableValidation() fn above; puts the object in a variable
 
-const validationObject = {
+const config = {
   formSelector: ".popup__form",
   inputSelector: ".popup__input",
   submitButtonSelector: ".popup__button",
@@ -62,7 +62,7 @@ const validationObject = {
   errorClass: "popup__error_visible",
 };
 
-enableValidation(validationObject);
+enableValidation(config);
 
 // const hasInvalidInput = ();
 // const toggleButtonState = ();
@@ -101,7 +101,7 @@ function setEventListeners(formElement) {
 /*                               Event Listeners                              */
 /* -------------------------------------------------------------------------- */
 formElement.addEventListener("submit", () => {
-  evt.preventDefault();
+  e.preventDefault();
 });
 
 formInput.addEventListener("input", checkInputValidity);

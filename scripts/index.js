@@ -132,18 +132,18 @@ function setProfileData() {
 /*                               Event Handlers                               */
 /* -------------------------------------------------------------------------- */
 
-function handleProfileEditSubmit(evt) {
-  evt.preventDefault();
+function handleProfileEditSubmit(e) {
+  e.preventDefault();
   setProfileData();
   closePopup(profileEditModal);
 }
 
-function handleCardAddSubmit(evt) {
-  evt.preventDefault();
+function handleCardAddSubmit(e) {
+  e.preventDefault();
   const name = cardInputTitle.value;
   const link = cardInputImage.value;
   renderCard({ name, link }, cardListElement);
-  evt.target.reset();
+  e.target.reset();
   closePopup(cardAddModal);
 }
 
