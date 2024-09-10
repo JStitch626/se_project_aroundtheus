@@ -105,7 +105,7 @@
   opacity: 0.8;
 }
 
-.modal__button_inactive {
+.modal__button_disabled {
   background-color: #fff;
   border: 1px solid #000;
   color: #000;

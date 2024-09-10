@@ -37,12 +37,13 @@
   border-bottom: 1px solid #ff0000;
 }
 
-.form__input-error {
+.form__error {
   color: #ff0000;
+  font-size: 12px;
   opacity: 0;
 }
 
-.form__input-error_active {
+.form__error_visible {
   opacity: 1;
 }
 

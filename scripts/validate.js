@@ -22,7 +22,9 @@ function setEventListeners(formEl, config) {
   const { inputSelector } = config;
   const inputEls = [...formEl.querySelectorAll(inputSelector)];
   inputEls.forEach((inputEl) => {
-    inputEl.addEventListener("change", () => console.log("input ran"));
+    inputEl.addEventListener("input", (e) => {
+      console.log(inputEl.validationMessage);
+    });
   });
 }
 
