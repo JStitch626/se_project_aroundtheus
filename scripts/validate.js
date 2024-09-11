@@ -24,30 +24,26 @@ function checkInputValidity(formEl, inputEl, config) {
   }
 }
 
-// function hassInvalidInput()
+//naming convention - hasXXXXXXX - means it returns a Boolean
+function hasInvalidInput(inputList) {
+  return !inputList.every((inputEl) => inputEl.validity.valid);
+}
 
 function toggleButtonState(inputEls, submitButton, { inactiveButtonClass }) {
-  let foundInvalid = false;
-
-  inputEls.forEach((inputEl) => {
-    if (!inputEl.validity.valid) {
-      foundInvalid = true;
-    }
-  });
-
-  if (foundInvalid) {
+  if (hasInvalidInput(inputEls)) {
     submitButton.classList.add(inactiveButtonClass);
-    return (submitButton.disabled = true);
+    submitButton.disabled = true;
+    return;
     // instead of using else, use "return"
   }
   submitButton.classList.remove(inactiveButtonClass);
   submitButton.disabled = false;
 }
 
-function setEventListeners(formEl, config) {
+function setEventListeners(formEl, { inputSelector, submitButtonSelector }) {
   //Object destructuring - "Syntactic sugar" makes code more legible. //const inputSelector = inputSelector.config means the same as below. //creates a variable called `inputSelector` with the property `inputSelector.config`
-  const { inputSelector } = config;
-  const { submitButtonSelector } = config;
+  // const { inputSelector } = config;
+  // const { submitButtonSelector } = config;
   const inputEls = [...formEl.querySelectorAll(inputSelector)];
   const submitButton = formEl.querySelector(submitButtonSelector);
   inputEls.forEach((inputEl) => {
