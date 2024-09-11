@@ -37,12 +37,12 @@ function enableSubmitButton(submitButton, { inactiveButtonClass }) {
 function disableSubmitButton(submitButton, { inactiveButtonClass }) {
   submitButton.classList.add(inactiveButtonClass);
   submitButton.disabled = true;
-  return;
 }
 
 function toggleButtonState(inputEls, submitButton, { inactiveButtonClass }) {
   if (hasInvalidInput(inputEls)) {
     disableSubmitButton(submitButton, config);
+    return;
   }
   enableSubmitButton(submitButton, config);
 }
