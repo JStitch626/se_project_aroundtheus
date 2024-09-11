@@ -112,6 +112,10 @@
   opacity: 0.2;
 }
 
+.modal__button_disabled:hover {
+  opacity: 0.2;
+}
+
 @media screen and (max-width: 630px) {
   .modal__container {
     width: 282px;

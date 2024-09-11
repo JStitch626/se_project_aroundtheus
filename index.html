@@ -135,7 +135,14 @@
             />
             <span class="card-input-image-url-error form__error"></span>
           </fieldset>
-          <button type="submit" class="modal__button" id="card-save-button">
+
+          <!-- disable add-card-button by default -->
+          <button
+            type="submit"
+            class="modal__button modal__button_disabled"
+            id="card-save-button"
+            disabled
+          >
             Create
           </button>
         </form>

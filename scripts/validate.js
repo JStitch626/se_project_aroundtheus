@@ -1,11 +1,4 @@
 /* -------------------------------------------------------------------------- */
-/*                                  Elements                                  */
-/* -------------------------------------------------------------------------- */
-
-// const formEl = document.querySelector(".form");
-// const formInput = document.querySelector(".form__input");
-
-/* -------------------------------------------------------------------------- */
 /*                                  Functions                                 */
 /* -------------------------------------------------------------------------- */
 
@@ -31,13 +24,36 @@ function checkInputValidity(formEl, inputEl, config) {
   }
 }
 
+// function hassInvalidInput()
+
+function toggleButtonState(inputEls, submitButton, { inactiveButtonClass }) {
+  let foundInvalid = false;
+
+  inputEls.forEach((inputEl) => {
+    if (!inputEl.validity.valid) {
+      foundInvalid = true;
+    }
+  });
+
+  if (foundInvalid) {
+    submitButton.classList.add(inactiveButtonClass);
+    return (submitButton.disabled = true);
+    // instead of using else, use "return"
+  }
+  submitButton.classList.remove(inactiveButtonClass);
+  submitButton.disabled = false;
+}
+
 function setEventListeners(formEl, config) {
   //Object destructuring - "Syntactic sugar" makes code more legible. //const inputSelector = inputSelector.config means the same as below. //creates a variable called `inputSelector` with the property `inputSelector.config`
   const { inputSelector } = config;
+  const { submitButtonSelector } = config;
   const inputEls = [...formEl.querySelectorAll(inputSelector)];
+  const submitButton = formEl.querySelector(submitButtonSelector);
   inputEls.forEach((inputEl) => {
     inputEl.addEventListener("input", (e) => {
       checkInputValidity(formEl, inputEl, config);
+      toggleButtonState(inputEls, submitButton, config);
     });
   });
 }
@@ -87,26 +103,3 @@ const config = {
 };
 
 enableValidation(config);
-
-// const hasInvalidInput = ();
-// const toggleButtonState = ();
-
-/* -------------------------------------------------------------------------- */
-/*                                  Event Handlers                            */
-// /* -------------------------------------------------------------------------- */
-
-// function setEventListeners(formEl) {
-//   const formInputList = Array.from(formEl.querySelectorAll(".form__input"));
-
-//   formInputList.forEach((inputElement) => {
-//     inputElement.addEventListener("input", () => {
-//       checkInputValidity(formEl, inputElement);
-//     });
-//   });
-// }
-
-// /* -------------------------------------------------------------------------- */
-// /*                               Event Listeners                              */
-// /* -------------------------------------------------------------------------- */
-
-// formInput.addEventListener("input", checkInputValidity);
