@@ -9,13 +9,27 @@
 /*                                  Functions                                 */
 /* -------------------------------------------------------------------------- */
 
-// function checkInputValidity(formEl, inputElement) {
-//   if (!inputElement.validity.valid) {
-//     showInputError(formEl, inputElement, inputElement.validationMessage);
-//   } else {
-//     hideInputError(formEl, inputElement);
-//   }
-// }
+function showInputError(formEl, inputEl, { inputErrorClass, errorClass }) {
+  const errorMessage = formEl.querySelector(`.${inputEl.id}-error`);
+  inputEl.classList.add(inputErrorClass);
+  errorMessage.textContent = inputEl.validationMessage;
+  errorMessage.classList.add(errorClass);
+}
+
+function hideInputError(formEl, inputEl, { inputErrorClass, errorClass }) {
+  const errorMessage = formEl.querySelector(`.${inputEl.id}-error`);
+  inputEl.classList.remove(inputErrorClass);
+  errorMessage.textContent = "";
+  errorMessage.classList.remove(errorClass);
+}
+
+function checkInputValidity(formEl, inputEl, config) {
+  if (!inputEl.validity.valid) {
+    showInputError(formEl, inputEl, config);
+  } else {
+    hideInputError(formEl, inputEl, config);
+  }
+}
 
 function setEventListeners(formEl, config) {
   //Object destructuring - "Syntactic sugar" makes code more legible. //const inputSelector = inputSelector.config means the same as below. //creates a variable called `inputSelector` with the property `inputSelector.config`
@@ -23,7 +37,7 @@ function setEventListeners(formEl, config) {
   const inputEls = [...formEl.querySelectorAll(inputSelector)];
   inputEls.forEach((inputEl) => {
     inputEl.addEventListener("input", (e) => {
-      console.log(inputEl.validationMessage);
+      checkInputValidity(formEl, inputEl, config);
     });
   });
 }
@@ -80,20 +94,6 @@ enableValidation(config);
 /* -------------------------------------------------------------------------- */
 /*                                  Event Handlers                            */
 // /* -------------------------------------------------------------------------- */
-
-// function showInputError(formEl, inputElement, errorMessage) {
-//   const formError = formEl.querySelector(`.${inputElement.id}-error`);
-//   inputElement.classList.add("form__input_type_error");
-//   formError.textContent = errorMessage;
-//   formError.classList.add("form__input-error_active");
-// }
-
-// function hideInputError(formEl, inputElement) {
-//   const formError = formEl.querySelector(`.${inputElement.id}-error`);
-//   inputElement.classList.remove("form__input_type_error");
-//   formError.classList.remove("form__input-error_active");
-//   formError.textContent = "";
-// }
 
 // function setEventListeners(formEl) {
 //   const formInputList = Array.from(formEl.querySelectorAll(".form__input"));
