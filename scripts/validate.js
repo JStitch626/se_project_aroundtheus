@@ -24,7 +24,6 @@ function checkInputValidity(formEl, inputEl, config) {
   }
 }
 
-//naming convention - hasXXXXXXX - means it returns a Boolean
 function hasInvalidInput(inputList) {
   return !inputList.every((inputEl) => inputEl.validity.valid);
 }
@@ -48,9 +47,6 @@ function toggleButtonState(inputEls, submitButton, { inactiveButtonClass }) {
 }
 
 function setEventListeners(formEl, { inputSelector, submitButtonSelector }) {
-  //Object destructuring - "Syntactic sugar" makes code more legible. //const inputSelector = inputSelector.config means the same as below. //creates a variable called `inputSelector` with the property `inputSelector.config`
-  // const { inputSelector } = config;
-  // const { submitButtonSelector } = config;
   const inputEls = [...formEl.querySelectorAll(inputSelector)];
   const submitButton = formEl.querySelector(submitButtonSelector);
   inputEls.forEach((inputEl) => {
@@ -62,8 +58,6 @@ function setEventListeners(formEl, { inputSelector, submitButtonSelector }) {
 }
 
 function enableValidation(config) {
-  // use Spread operator [...] instead of Array.from() --> this grabs an array or array-like obj and makes a copy
-  //best practice: instead of ".modal__form," refer to the object that contains all the selectors and classes
   const formEls = [...document.querySelectorAll(config.formSelector)];
   formEls.forEach((formEl) => {
     formEl.addEventListener("submit", (e) => {
@@ -71,30 +65,10 @@ function enableValidation(config) {
     });
 
     setEventListeners(formEl, config);
-    // look for all inputs inside form
-    // loop through all inputs to see if all are valid
-    // if input !valid
-    // get validation message
-    // add error class to input
-    // display error message
-    // disable button
-    // if all inputs are valid
-    // enable button
+
     // reset error messages
   });
 }
-
-// enabling validation by calling enableValidation()
-// pass all the settings on call
-// enableValidation({
-//   formSelector: ".popup__form",
-//   inputSelector: ".popup__input",
-//   submitButtonSelector: ".popup__button",
-//   inactiveButtonClass: "popup__button_disabled",
-//   inputErrorClass: "popup__input_type_error",
-//   errorClass: "popup__error_visible",
-// });
-// the code below is the same as calling the enableValidation() fn above; puts the object in a variable
 
 const config = {
   formSelector: ".modal__form",
