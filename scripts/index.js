@@ -54,6 +54,8 @@ const cardAddButton = document.querySelector("#card-add-button");
 // per reviewer - find all close buttons
 const closeButtons = document.querySelectorAll(".modal__close");
 
+// const formInputs = document.querySelectorAll(".form__input");
+
 /* ---------------------------------- Forms --------------------------------- */
 /* Profile form elements */
 const profileName = document.querySelector(".profile__name");
@@ -159,6 +161,17 @@ closeButtons.forEach((button) => {
   button.addEventListener("click", () => closePopup(modal));
 });
 
+// Close modal with Esc key
+
+// function handleEscKey(e) {
+//   const input = input.closest(".form__input");
+//   input.addEventListener("keydown", () => {
+//     if (e.key === "Esc") {
+//       console.log("Pressed esc");
+//     }
+//   });
+// }
+
 /* ------------------------- profile event listeners ------------------------ */
 profileEditButton.addEventListener("click", openProfileModal);
 
@@ -168,6 +181,7 @@ profileEditForm.addEventListener("submit", handleProfileEditSubmit);
 cardAddButton.addEventListener("click", () => {
   openPopup(cardAddModal);
 });
+
 cardAddForm.addEventListener("submit", handleCardAddSubmit);
 
 /* ------------------------------ Initial cards ----------------------------- */
