@@ -162,15 +162,15 @@ closeButtons.forEach((button) => {
 });
 
 // Close modal with Esc key
-
-// function handleEscKey(e) {
-//   const input = input.closest(".form__input");
-//   input.addEventListener("keydown", () => {
-//     if (e.key === "Esc") {
-//       console.log("Pressed esc");
-//     }
-//   });
-// }
+document.addEventListener("keydown", (e) => {
+  const modalList = document.querySelectorAll(".modal");
+  if (e.key === "Escape") {
+    modalList.forEach((modal) => {
+      console.log(e);
+      closePopup(modal);
+    });
+  }
+});
 
 /* ------------------------- profile event listeners ------------------------ */
 profileEditButton.addEventListener("click", openProfileModal);
