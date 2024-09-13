@@ -147,6 +147,16 @@ function handleCardAddSubmit(e) {
   closePopup(cardAddModal);
 }
 
+function handleEscKey(e) {
+  const modalList = document.querySelectorAll(".modal");
+  if (e.key === "Escape") {
+    modalList.forEach((modal) => {
+      console.log(e);
+      closePopup(modal);
+    });
+  }
+}
+
 /* -------------------------------------------------------------------------- */
 /*                               Event Listeners                              */
 /* -------------------------------------------------------------------------- */
@@ -162,17 +172,16 @@ closeButtons.forEach((button) => {
 });
 
 /* KeyboardEvent - Esc key */
-document.addEventListener("keydown", (e) => {
-  const modalList = document.querySelectorAll(".modal");
-  if (e.key === "Escape") {
-    modalList.forEach((modal) => {
-      console.log(e);
-      closePopup(modal);
-    });
-  }
-});
+document.addEventListener("keydown", handleEscKey);
 
 /* MouseEvent - click outside modal */
+
+/* function handleOverlayClick
+
+document.addEventListener("mouseleave", (e) => {
+
+  })
+  */
 
 /* ------------------------- Profile event listeners ------------------------ */
 profileEditButton.addEventListener("click", openProfileModal);
