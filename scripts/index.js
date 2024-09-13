@@ -51,10 +51,8 @@ const previewImageDescription = document.querySelector(".modal__heading_image");
 /* ---------------------------- Buttons ---------------------------- */
 const profileEditButton = document.querySelector("#profile-edit-button");
 const cardAddButton = document.querySelector("#card-add-button");
-// per reviewer - find all close buttons
+// find all close buttons
 const closeButtons = document.querySelectorAll(".modal__close");
-
-// const formInputs = document.querySelectorAll(".form__input");
 
 /* ---------------------------------- Forms --------------------------------- */
 /* Profile form elements */
@@ -153,7 +151,9 @@ function handleCardAddSubmit(e) {
 /*                               Event Listeners                              */
 /* -------------------------------------------------------------------------- */
 
-// reviewer suggestion - universal handler for any close buttons
+/* ----------------------- Close modal event listeners ---------------------- */
+
+/* Universal handler for any close buttons */
 closeButtons.forEach((button) => {
   // find the closest popup
   const modal = button.closest(".modal");
@@ -161,7 +161,7 @@ closeButtons.forEach((button) => {
   button.addEventListener("click", () => closePopup(modal));
 });
 
-// Close modal with Esc key
+/* KeyboardEvent - Esc key */
 document.addEventListener("keydown", (e) => {
   const modalList = document.querySelectorAll(".modal");
   if (e.key === "Escape") {
@@ -172,12 +172,14 @@ document.addEventListener("keydown", (e) => {
   }
 });
 
-/* ------------------------- profile event listeners ------------------------ */
+/* MouseEvent - click outside modal */
+
+/* ------------------------- Profile event listeners ------------------------ */
 profileEditButton.addEventListener("click", openProfileModal);
 
 profileEditForm.addEventListener("submit", handleProfileEditSubmit);
 
-/* -------------------------- card event listeners -------------------------- */
+/* -------------------------- Card event listeners -------------------------- */
 cardAddButton.addEventListener("click", () => {
   openPopup(cardAddModal);
 });
