@@ -44,6 +44,8 @@ const profileEditModal = document.querySelector("#profile-edit-modal");
 const profileEditForm = profileEditModal.querySelector(".modal__form");
 const cardAddModal = document.querySelector("#card-add-modal");
 const cardAddForm = cardAddModal.querySelector(".modal__form");
+
+/*Preview elements*/
 const previewImageModal = document.querySelector("#preview-image-modal");
 const previewImage = previewImageModal.querySelector(".card__image_preview");
 const previewImageDescription = document.querySelector(".modal__heading_image");
@@ -147,15 +149,29 @@ function handleCardAddSubmit(e) {
   closePopup(cardAddModal);
 }
 
-function handleEscKey(e) {
-  const modalList = document.querySelectorAll(".modal");
-  if (e.key === "Escape") {
-    modalList.forEach((modal) => {
-      console.log(e);
-      closePopup(modal);
-    });
+function handleCloseOverlay(e) {
+  if (e.target.classList.contains("modal_opened")) {
+    // first get the modal that is opened
+    closePopup(e.target);
   }
 }
+
+function handleEscKey(e) {
+  if (e.key === "Escape") {
+    const modal = document.querySelector(".modal_opened");
+    closePopup(modal);
+  }
+}
+
+// function handleEscKey(e) {
+//   const modalList = document.querySelectorAll(".modal");
+//   if (e.key === "Escape") {
+//     modalList.forEach((modal) => {
+//       console.log(e);
+//       closePopup(modal);
+//     });
+//   }
+// }
 
 /* -------------------------------------------------------------------------- */
 /*                               Event Listeners                              */
