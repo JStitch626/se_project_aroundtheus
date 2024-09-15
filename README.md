@@ -8,8 +8,11 @@ Updated 9/15/2024
 
 This project introduces form validation by implementing error messages and disabling the "Save" button when inputs are invalid.
 
-To read about the progression of this project from its humble beginnings, scroll down and read the previous descriptions.
+[Click here to watch a video showcasing validation features](https://www.loom.com/share/247f28088a2a4aeda2c8a62d4b8a690a?sid=33ff2691-95b2-45da-841a-ccaea4b80d80)
 
+##
+To read about the progression of this project from its humble beginnings, scroll down and read the previous descriptions.
+##
 ## Project features
 
 - Semantic HTML5
