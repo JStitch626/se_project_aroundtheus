@@ -187,7 +187,7 @@ document.addEventListener("keydown", handleEscKey);
 
 /* MouseEvent - click outside modal */
 modalList.forEach((modal) => {
-  modal.addEventListener("click", handleOverlayClick);
+  modal.addEventListener("mousedown", handleOverlayClick);
 });
 
 /* ------------------------- Profile event listeners ------------------------ */
