@@ -37,14 +37,16 @@ function disableSubmitButton(submitButton, { inactiveButtonClass }) {
   submitButton.disabled = true;
 }
 
-function toggleButtonState(inputEls, submitButton, { inactiveButtonClass }) {
+function toggleButtonState(inputEls, submitButton, config) {
   if (hasInvalidInput(inputEls)) {
     return disableSubmitButton(submitButton, config);
   }
   enableSubmitButton(submitButton, config);
 }
 
-function setEventListeners(formEl, { inputSelector, submitButtonSelector }) {
+function setEventListeners(formEl, config) {
+  /* `config` should be taken from the `call` rather than the global scope then destructure using a var inside the function */
+  const { inputSelector, submitButtonSelector } = config;
   const inputEls = [...formEl.querySelectorAll(inputSelector)];
   const submitButton = formEl.querySelector(submitButtonSelector);
   inputEls.forEach((inputEl) => {
