@@ -40,12 +40,17 @@ const cardTemplate =
 const cardListElement = document.querySelector(".cards__list");
 
 /* ----------------------------- Wrappers  ---------------------------- */
+
+const modalList = document.querySelectorAll(".modal");
+/* Profile modal */
 const profileEditModal = document.querySelector("#profile-edit-modal");
 const profileEditForm = profileEditModal.querySelector(".modal__form");
+
+/* Card modal */
 const cardAddModal = document.querySelector("#card-add-modal");
 const cardAddForm = cardAddModal.querySelector(".modal__form");
 
-/*Preview elements*/
+/* Preview image modal */
 const previewImageModal = document.querySelector("#preview-image-modal");
 const previewImage = previewImageModal.querySelector(".card__image_preview");
 const previewImageDescription = document.querySelector(".modal__heading_image");
@@ -149,10 +154,11 @@ function handleCardAddSubmit(e) {
   closePopup(cardAddModal);
 }
 
-function handleCloseOverlay(e) {
+function handleOverlayClick(e) {
   if (e.target.classList.contains("modal_opened")) {
     // first get the modal that is opened
-    closePopup(e.target);
+    const modal = document.querySelector(".modal_opened");
+    closePopup(modal);
   }
 }
 
@@ -162,16 +168,6 @@ function handleEscKey(e) {
     closePopup(modal);
   }
 }
-
-// function handleEscKey(e) {
-//   const modalList = document.querySelectorAll(".modal");
-//   if (e.key === "Escape") {
-//     modalList.forEach((modal) => {
-//       console.log(e);
-//       closePopup(modal);
-//     });
-//   }
-// }
 
 /* -------------------------------------------------------------------------- */
 /*                               Event Listeners                              */
@@ -183,7 +179,6 @@ function handleEscKey(e) {
 closeButtons.forEach((button) => {
   // find the closest popup
   const modal = button.closest(".modal");
-  // set the listener
   button.addEventListener("click", () => closePopup(modal));
 });
 
@@ -191,13 +186,9 @@ closeButtons.forEach((button) => {
 document.addEventListener("keydown", handleEscKey);
 
 /* MouseEvent - click outside modal */
-
-/* function handleOverlayClick
-
-document.addEventListener("mouseleave", (e) => {
-
-  })
-  */
+modalList.forEach((modal) => {
+  modal.addEventListener("click", handleOverlayClick);
+});
 
 /* ------------------------- Profile event listeners ------------------------ */
 profileEditButton.addEventListener("click", openProfileModal);

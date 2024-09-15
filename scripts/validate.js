@@ -18,10 +18,9 @@ function hideInputError(formEl, inputEl, { inputErrorClass, errorClass }) {
 
 function checkInputValidity(formEl, inputEl, config) {
   if (!inputEl.validity.valid) {
-    showInputError(formEl, inputEl, config);
-  } else {
-    hideInputError(formEl, inputEl, config);
+    return showInputError(formEl, inputEl, config);
   }
+  hideInputError(formEl, inputEl, config);
 }
 
 function hasInvalidInput(inputList) {
@@ -40,8 +39,7 @@ function disableSubmitButton(submitButton, { inactiveButtonClass }) {
 
 function toggleButtonState(inputEls, submitButton, { inactiveButtonClass }) {
   if (hasInvalidInput(inputEls)) {
-    disableSubmitButton(submitButton, config);
-    return;
+    return disableSubmitButton(submitButton, config);
   }
   enableSubmitButton(submitButton, config);
 }
