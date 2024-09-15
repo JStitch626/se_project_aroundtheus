@@ -11,6 +11,8 @@
 
 .form__label {
   position: relative;
+  max-width: 358px;
+  width: 100%;
 }
 
 .form__input {
@@ -21,7 +23,7 @@
   box-sizing: border-box;
   border: none;
   border-bottom: 1px solid rgba(0, 0, 0, 0.2);
-  width: 358px;
+  width: 100%;
   padding-bottom: 13px;
 }
 
