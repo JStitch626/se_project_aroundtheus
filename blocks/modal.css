@@ -45,6 +45,16 @@
   box-shadow: none;
 }
 
+/* popup imageModal */
+.modal__image-preview {
+  margin: auto;
+  width: 100%;
+  height: 100%;
+  max-width: 75vw;
+  max-height: 75vh;
+  border-radius: 0px;
+}
+
 .modal__close {
   background: transparent url(../images/close-icon.svg) center no-repeat;
   background-size: contain;

@@ -52,7 +52,7 @@ const cardAddForm = cardAddModal.querySelector(".modal__form");
 
 /* Preview image modal */
 const previewImageModal = document.querySelector("#preview-image-modal");
-const previewImage = previewImageModal.querySelector(".card__image_preview");
+const previewImage = previewImageModal.querySelector(".modal__image-preview");
 const previewImageDescription = document.querySelector(".modal__heading_image");
 
 /* ---------------------------- Buttons ---------------------------- */
