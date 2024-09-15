@@ -82,10 +82,12 @@ const cardInputImage = document.querySelector("#card-input-image-url");
 
 function openPopup(modal) {
   modal.classList.add("modal_opened");
+  document.addEventListener("keydown", handleEscKey);
 }
 
 function closePopup(modal) {
   modal.classList.remove("modal_opened");
+  document.removeEventListener("keydown", handleEscKey);
 }
 
 // Pulls card elements from cardTemplate
@@ -156,9 +158,8 @@ function handleCardAddSubmit(e) {
 
 function handleOverlayClick(e) {
   if (e.target.classList.contains("modal_opened")) {
-    // first get the modal that is opened
-    const modal = document.querySelector(".modal_opened");
-    closePopup(modal);
+    //`e.target` is the opened modal, so you do not need `modal` var to search for it in DOM
+    closePopup(e.target);
   }
 }
 
@@ -181,9 +182,6 @@ closeButtons.forEach((button) => {
   const modal = button.closest(".modal");
   button.addEventListener("click", () => closePopup(modal));
 });
-
-/* KeyboardEvent - Esc key */
-document.addEventListener("keydown", handleEscKey);
 
 /* MouseEvent - click outside modal */
 modalList.forEach((modal) => {
