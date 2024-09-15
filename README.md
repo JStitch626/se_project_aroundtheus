@@ -4,6 +4,7 @@
 
 **_Objects, Event Handling, and Form Validation in JavaScript_**
 
+Updated 9/15/2024
 This project introduces form validation by implementing error messages and disabling the "Save" button when inputs are invalid.
 
 To read about the progression of this project from its humble beginnings, scroll down and read the previous descriptions.
@@ -38,8 +39,8 @@ To read about the progression of this project from its humble beginnings, scroll
 ### Project 5 Becomes More Engaging
 
 _JavaScript Program Logic and Methods_
-Updated 1/15/2024
 
+Updated 1/15/2024
 In the previous sprint, we successfully implemented the initial interactive feature of the webpage, enabling users to open, edit, and close their profile. In this sprint, we will extend functionality by adding JavaScript to allow users to add or delete cards and use the "Like" button to mark their favorite cards. Additionally, popup modals will now feature smooth transitions to and from transparency for enhanced visual appeal.
 
 ---
@@ -47,8 +48,8 @@ In the previous sprint, we successfully implemented the initial interactive feat
 ### Project 4: Around The U.S. interactive
 
 _Basic JavaScript and Working with the DOM_
-Updated 11/24/2023
 
+Updated 11/24/2023
 This project builds upon the work completed in Project 3. In this sprint, we have integrated interactive features using JavaScript. We have learned to access DOM nodes with querySelector() and querySelectorAll(), define variables, and create and invoke functions to enhance button functionality.
 
 The "Edit" button now allows users to modify the name and description on the page. Upon clicking the button, a modal appears containing the current information, which can be updated. Clicking the "Save" button then replaces the old information with the newly entered details.
