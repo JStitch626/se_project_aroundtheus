@@ -5,6 +5,7 @@
 **_Objects, Event Handling, and Form Validation in JavaScript_**
 
 Updated 9/15/2024
+
 This project introduces form validation by implementing error messages and disabling the "Save" button when inputs are invalid.
 
 To read about the progression of this project from its humble beginnings, scroll down and read the previous descriptions.
@@ -41,6 +42,7 @@ To read about the progression of this project from its humble beginnings, scroll
 _JavaScript Program Logic and Methods_
 
 Updated 1/15/2024
+
 In the previous sprint, we successfully implemented the initial interactive feature of the webpage, enabling users to open, edit, and close their profile. In this sprint, we will extend functionality by adding JavaScript to allow users to add or delete cards and use the "Like" button to mark their favorite cards. Additionally, popup modals will now feature smooth transitions to and from transparency for enhanced visual appeal.
 
 ---
@@ -50,6 +52,7 @@ In the previous sprint, we successfully implemented the initial interactive feat
 _Basic JavaScript and Working with the DOM_
 
 Updated 11/24/2023
+
 This project builds upon the work completed in Project 3. In this sprint, we have integrated interactive features using JavaScript. We have learned to access DOM nodes with querySelector() and querySelectorAll(), define variables, and create and invoke functions to enhance button functionality.
 
 The "Edit" button now allows users to modify the name and description on the page. Upon clicking the button, a modal appears containing the current information, which can be updated. Clicking the "Save" button then replaces the old information with the newly entered details.
@@ -63,6 +66,7 @@ The "Edit" button now allows users to modify the name and description on the pag
 ### Project 3: Around The U.S.
 
 _Adaptive Web Design and Working with Layouts_
+
 This project exhibits a webpage with an adaptive design. Incorporating lessons from the previous two sprints and introducing Figma as an additional tool, we built a website that adapts to different screen sizes:
 
 - 1280px desktop
