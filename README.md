@@ -1,12 +1,10 @@
-# Project 5: Around The U.S. interactive
+# Project 6: Around The U.S.
 
 ## Description
 
-Updated 1/15/2024
+**_Objects, Event Handling, and Form Validation in JavaScript_**
 
-**Sprint 5 Becomes More Engaging**
-
-During the last sprint, we completed the first interactive piece of the webpage: the user can open, edit, and close the profile. Now we begin to incorporate more Javascript to allow the user to add and/or delete cards, and use the "Like" button to show which cards a user likes. Stylistically, popup modals will now smoothly transition from and to transparency.
+This project introduces form validation by implementing error messages and disabling the "Save" button when inputs are invalid.
 
 To read about the progression of this project from its humble beginnings, scroll down and read the previous descriptions.
 
@@ -28,6 +26,7 @@ To read about the progression of this project from its humble beginnings, scroll
 - Make all the buttons functional by writing the necessary code
 - Open and close the picture modal when the user clicks the picture or the "Close" button respectively
 - Create a smooth transition for the modal boxes to open from and close to transparency
+- Use form validation to ensure all inputs are valid
 - Update the README.md file
 - Use git branch
 - Deploy the project to Github Pages
@@ -36,28 +35,23 @@ To read about the progression of this project from its humble beginnings, scroll
 
 ---
 
+### Project 5 Becomes More Engaging
+
+_JavaScript Program Logic and Methods_
+Updated 1/15/2024
+
+In the previous sprint, we successfully implemented the initial interactive feature of the webpage, enabling users to open, edit, and close their profile. In this sprint, we will extend functionality by adding JavaScript to allow users to add or delete cards and use the "Like" button to mark their favorite cards. Additionally, popup modals will now feature smooth transitions to and from transparency for enhanced visual appeal.
+
+---
+
 ### Project 4: Around The U.S. interactive
 
-### Description
-
+_Basic JavaScript and Working with the DOM_
 Updated 11/24/2023
 
-This project continues where Project 3 finished. In this sprint, we incorporate interactive features using JavaScript. we learned how to access nodes in the DOM tree using querySelector() and querySelectorAll(), define variables, and declare and call functions to make the buttons usable.
+This project builds upon the work completed in Project 3. In this sprint, we have integrated interactive features using JavaScript. We have learned to access DOM nodes with querySelector() and querySelectorAll(), define variables, and create and invoke functions to enhance button functionality.
 
-By clicking the "Edit" button, the end user can now manipulate the name and description on the page. When the modal opens, the form contains the information currently displayed on the page, which can then be changed. When the end user clicks the "Save" button, the new information replaces the previous name and description.
-
-### Code Corrections
-
-- modal.css
-  - line 24, `.modal__container` remove fixed height to allow input expansion or deletions
-  - line 57, `.modal__heading` remove fixed height; text elements do not need fixed height
-  - line 91 `@media screen and (max-width: 630px)` for `.modal__container` - same reason as above
-
-- index.html
-  - line 61 add `type` to button element
-  - line 62 change `<p>` to `<h2>`
-  - line 69 change modifiers from boolean to key-value type
-  - for both inputs name and description, changed modifier to `.form__input_profile-input_modifier-value`
+The "Edit" button now allows users to modify the name and description on the page. Upon clicking the button, a modal appears containing the current information, which can be updated. Clicking the "Save" button then replaces the old information with the newly entered details.
 
 ### Code Enhancements
 
@@ -67,6 +61,7 @@ By clicking the "Edit" button, the end user can now manipulate the name and desc
 
 ### Project 3: Around The U.S.
 
+_Adaptive Web Design and Working with Layouts_
 This project exhibits a webpage with an adaptive design. Incorporating lessons from the previous two sprints and introducing Figma as an additional tool, we built a website that adapts to different screen sizes:
 
 - 1280px desktop
@@ -74,15 +69,6 @@ This project exhibits a webpage with an adaptive design. Incorporating lessons f
 - 320px mobile phone
 
 Unlike the previous sprints which were divided into stages with briefs, we received only a general overview and the Figma design and had to create everything from scratch.
-
-### Code corrections
-
-- card.css - line 42 change opacity from 0.6 to 0.5 according to Figma design
-- page.css - line 36 remove redundant css rule
-- profile.css - assign border styles of '1px solid' to `profile__edit-button` selector as shown in Figma design
-- index.html - line 23-24 remove extraneous containers
-- button style - add `cursor: pointer` declaration to each button so that a hand appears over the hovered button
-- index.html - line 41 `.cards__list` must be listed by itself because BEM does not allow `class="block block__element"`
 
 ### Code enhancements
 

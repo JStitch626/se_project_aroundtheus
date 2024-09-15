@@ -70,30 +70,32 @@
 
         <form class="modal__form form" id="profile-edit-form" novalidate>
           <fieldset class="form__fieldset">
-            <label class="form__label" for="profile-input-name"></label>
-            <input
-              type="text"
-              class="form__input form__input_profile-input_name"
-              id="profile-input-name"
-              name="name"
-              placeholder="Name"
-              minlength="2"
-              maxlength="40"
-              required
-            />
-            <span class="profile-input-name-error form__error"></span>
-            <label class="form__label" for="profile-input-description"></label>
-            <input
-              type="text"
-              class="form__input form__input_profile-input_description"
-              id="profile-input-description"
-              name="description"
-              placeholder="Description"
-              minlength="2"
-              maxlength="200"
-              required
-            />
-            <span class="profile-input-description-error form__error"></span>
+            <label class="form__label" for="profile-input-name">
+              <input
+                type="text"
+                class="form__input form__input_profile-input_name"
+                id="profile-input-name"
+                name="name"
+                placeholder="Name"
+                minlength="2"
+                maxlength="40"
+                required
+              />
+              <span class="profile-input-name-error form__error"></span>
+            </label>
+            <label class="form__label" for="profile-input-description">
+              <input
+                type="text"
+                class="form__input form__input_profile-input_description"
+                id="profile-input-description"
+                name="description"
+                placeholder="Description"
+                minlength="2"
+                maxlength="200"
+                required
+              />
+              <span class="profile-input-description-error form__error"></span>
+            </label>
           </fieldset>
           <button type="submit" class="modal__button" id="profile-save-button">
             Save
@@ -112,28 +114,30 @@
 
         <form class="modal__form form" id="card-add-form" novalidate>
           <fieldset class="form__fieldset">
-            <label class="form__label" for="card-input-title"></label>
-            <input
-              type="text"
-              class="form__input form__input_card-input_title"
-              id="card-input-title"
-              name="title"
-              placeholder="Title"
-              minlength="1"
-              maxlength="30"
-              required
-            />
-            <span class="card-input-title-error form__error"></span>
-            <label class="form__label" for="card-input-image-url"></label>
-            <input
-              type="url"
-              class="form__input form__input_card-input_image"
-              id="card-input-image-url"
-              name="url"
-              placeholder="Image URL"
-              required
-            />
-            <span class="card-input-image-url-error form__error"></span>
+            <label class="form__label" for="card-input-title">
+              <input
+                type="text"
+                class="form__input form__input_card-input_title"
+                id="card-input-title"
+                name="title"
+                placeholder="Title"
+                minlength="1"
+                maxlength="30"
+                required
+              />
+              <span class="card-input-title-error form__error"></span>
+            </label>
+            <label class="form__label" for="card-input-image-url">
+              <input
+                type="url"
+                class="form__input form__input_card-input_image"
+                id="card-input-image-url"
+                name="url"
+                placeholder="Image URL"
+                required
+              />
+              <span class="card-input-image-url-error form__error"></span>
+            </label>
           </fieldset>
 
           <!-- disable add-card-button by default -->

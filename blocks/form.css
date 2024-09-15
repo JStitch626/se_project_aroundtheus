@@ -9,6 +9,10 @@
   width: 100%;
 }
 
+.form__label {
+  position: relative;
+}
+
 .form__input {
   font: inherit;
   font-size: 14px;
@@ -17,7 +21,7 @@
   box-sizing: border-box;
   border: none;
   border-bottom: 1px solid rgba(0, 0, 0, 0.2);
-  width: 100%;
+  width: 358px;
   padding-bottom: 13px;
 }
 
@@ -29,22 +33,19 @@
   color: rgba(0, 0, 0, 0.4);
 }
 
-/* .form__input:invalid {
-  border-bottom: 1px solid #ff0000;
-} */
-
 .form__input_type_error {
   border-bottom: 1px solid #ff0000;
 }
 
 .form__error {
   color: #ff0000;
-  font-size: 12px;
-  /* line-height: 15px;
+  /* Used 10px to make the complete error message legible */
+  font-size: 10px;
+  line-height: 1;
   position: absolute;
   top: calc(100% + 5px);
   left: 0;
-  transition: opacity 0.3s; */
+  transition: opacity 0.3s;
   opacity: 0;
 }
 
