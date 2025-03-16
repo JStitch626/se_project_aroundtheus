@@ -3,7 +3,7 @@
 ## Description
 
 **_Objects, Event Handling, and Form Validation in JavaScript_**
-test
+
 Updated 9/15/2024
 
 This project introduces form validation by implementing error messages and disabling the "Save" button when inputs are invalid.
