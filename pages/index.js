@@ -156,7 +156,7 @@ function handleCardAddSubmit(e) {
   closePopup(cardAddModal);
 }
 
-function handleOverlayClick(e) {
+function handleImageClick(e) {
   if (e.target.classList.contains("modal_opened")) {
     //`e.target` is the opened modal, so you do not need `modal` var to search for it in DOM
     closePopup(e.target);
@@ -185,7 +185,7 @@ closeButtons.forEach((button) => {
 
 /* MouseEvent - click outside modal */
 modalList.forEach((modal) => {
-  modal.addEventListener("mousedown", handleOverlayClick);
+  modal.addEventListener("mousedown", handleImageClick);
 });
 
 /* ------------------------- Profile event listeners ------------------------ */
