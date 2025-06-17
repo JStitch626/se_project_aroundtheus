@@ -1,3 +1,5 @@
+import Card from "../components/Card.js";
+
 const initialCards = [
   {
     name: "Yosemite Valley",
@@ -34,10 +36,10 @@ const initialCards = [
 /*                                  Elements                                  */
 /* -------------------------------------------------------------------------- */
 
-// /* -------------------------- Card template elements ------------------------- */
-// const cardTemplate =
-//   document.querySelector("#card-template").content.firstElementChild;
-// const cardListElement = document.querySelector(".cards__list");
+/* -------------------------- Card template elements ------------------------- */
+const cardTemplate =
+  document.querySelector("#card-template").content.firstElementChild;
+const cardListElement = document.querySelector(".cards__list");
 
 /* ----------------------------- Wrappers  ---------------------------- */
 
@@ -46,9 +48,9 @@ const modalList = document.querySelectorAll(".modal");
 const profileEditModal = document.querySelector("#profile-edit-modal");
 const profileEditForm = profileEditModal.querySelector(".modal__form");
 
-// /* Card modal */
-// const cardAddModal = document.querySelector("#card-add-modal");
-// const cardAddForm = cardAddModal.querySelector(".modal__form");
+/* Card modal */
+const cardAddModal = document.querySelector("#card-add-modal");
+const cardAddForm = cardAddModal.querySelector(".modal__form");
 
 /* Preview image modal */
 const previewImageModal = document.querySelector("#preview-image-modal");
@@ -57,7 +59,7 @@ const previewImageDescription = document.querySelector(".modal__heading_image");
 
 /* ---------------------------- Buttons ---------------------------- */
 const profileEditButton = document.querySelector("#profile-edit-button");
-// const cardAddButton = document.querySelector("#card-add-button");
+const cardAddButton = document.querySelector("#card-add-button");
 
 // find all close buttons
 const closeButtons = document.querySelectorAll(".modal__close");
@@ -71,11 +73,11 @@ const profileInputDescription = document.querySelector(
   "#profile-input-description"
 );
 
-// /* Card form elements */
-// const cardTitle = document.querySelector(".card__title");
-// const cardImage = document.querySelector(".card__image");
-// const cardInputTitle = document.querySelector("#card-input-title");
-// const cardInputImage = document.querySelector("#card-input-image-url");
+/* Card form elements */
+const cardTitle = document.querySelector(".card__title");
+const cardImage = document.querySelector(".card__image");
+const cardInputTitle = document.querySelector("#card-input-title");
+const cardInputImage = document.querySelector("#card-input-image-url");
 
 /* -------------------------------------------------------------------------- */
 /*                                  Functions                                 */
@@ -118,6 +120,8 @@ function getCardElement(cardData) {
   cardImageElement.setAttribute("src", cardData.link);
   cardImageElement.setAttribute("alt", cardData.name);
   cardTitleElement.textContent = cardData.name;
+  //review video for the location of this variable to instantiate the class Card
+  // const card = new Card(cardData, "#card-template", handleImageClick);
 
   return cardElement;
 }
@@ -125,6 +129,8 @@ function getCardElement(cardData) {
 function renderCard(cardData, wrapper) {
   const cardElement = getCardElement(cardData);
   wrapper.prepend(cardElement);
+  //review video for the location of this variable to instantiate the class Card
+  const card = new Card(cardData, "#card-template", handleImageClick);
 }
 
 function openProfileModal() {

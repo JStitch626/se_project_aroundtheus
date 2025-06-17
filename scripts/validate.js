@@ -27,22 +27,22 @@ function hasInvalidInput(inputList) {
   return !inputList.every((inputEl) => inputEl.validity.valid);
 }
 
-function enableSubmitButton(submitButton, { inactiveButtonClass }) {
-  submitButton.classList.remove(inactiveButtonClass);
-  submitButton.disabled = false;
-}
+// function enableSubmitButton(submitButton, { inactiveButtonClass }) {
+//   submitButton.classList.remove(inactiveButtonClass);
+//   submitButton.disabled = false;
+// }
 
-function disableSubmitButton(submitButton, { inactiveButtonClass }) {
-  submitButton.classList.add(inactiveButtonClass);
-  submitButton.disabled = true;
-}
+// function disableSubmitButton(submitButton, { inactiveButtonClass }) {
+//   submitButton.classList.add(inactiveButtonClass);
+//   submitButton.disabled = true;
+// }
 
-function toggleButtonState(inputEls, submitButton, config) {
-  if (hasInvalidInput(inputEls)) {
-    return disableSubmitButton(submitButton, config);
-  }
-  enableSubmitButton(submitButton, config);
-}
+// function toggleButtonState(inputEls, submitButton, config) {
+//   if (hasInvalidInput(inputEls)) {
+//     return disableSubmitButton(submitButton, config);
+//   }
+//   enableSubmitButton(submitButton, config);
+// }
 
 function setEventListeners(formEl, config) {
   /* `config` should be taken from the `call` rather than the global scope then destructure using a var inside the function */
@@ -57,18 +57,18 @@ function setEventListeners(formEl, config) {
   });
 }
 
-function enableValidation(config) {
-  const formEls = [...document.querySelectorAll(config.formSelector)];
-  formEls.forEach((formEl) => {
-    formEl.addEventListener("submit", (e) => {
-      e.preventDefault();
-    });
+// function enableValidation(config) {
+//   const formEls = [...document.querySelectorAll(config.formSelector)];
+//   formEls.forEach((formEl) => {
+//     formEl.addEventListener("submit", (e) => {
+//       e.preventDefault();
+//     });
 
-    setEventListeners(formEl, config);
+//     setEventListeners(formEl, config);
 
-    // reset error messages
-  });
-}
+//     // reset error messages
+//   });
+// }
 
 const config = {
   formSelector: ".modal__form",
