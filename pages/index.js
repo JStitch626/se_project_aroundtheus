@@ -38,11 +38,12 @@ const initialCards = [
 /* -------------------------------------------------------------------------- */
 
 const cardData = {
-  name: "Yosemite Valley",
-  link: "https://practicum-content.s3.us-west-1.amazonaws.com/software-engineer/around-project/yosemite.jpg",
+  name: "",
+  link: "",
 };
 
-const card = new Card(cardData, "#card-template");
+// instantiate the Card class
+const card = new Card(cardData, "#card-template", handleImageClick);
 card.getView();
 
 /* -------------------------- Card template elements ------------------------- */
@@ -83,8 +84,8 @@ const profileInputDescription = document.querySelector(
 );
 
 /* Card form elements */
-const cardTitle = document.querySelector(".card__title");
-const cardImage = document.querySelector(".card__image");
+// const cardTitle = document.querySelector(".card__title");
+// const cardImage = document.querySelector(".card__image");
 const cardInputTitle = document.querySelector("#card-input-title");
 const cardInputImage = document.querySelector("#card-input-image-url");
 
@@ -119,27 +120,30 @@ function getCardElement(cardData) {
   //   cardElement.remove();
   // });
 
-  cardImageElement.addEventListener("click", () => {
-    previewImage.src = cardData.link;
-    previewImage.alt = cardData.name;
-    previewImageDescription.textContent = cardData.name;
-    openPopup(previewImageModal);
-  });
+  // cardImageElement.addEventListener("click", () => {
+  //   previewImage.src = cardData.link;
+  //   previewImage.alt = cardData.name;
+  //   previewImageDescription.textContent = cardData.name;
+  //   openPopup(previewImageModal);
+  // });
 
   cardImageElement.setAttribute("src", cardData.link);
   cardImageElement.setAttribute("alt", cardData.name);
   cardTitleElement.textContent = cardData.name;
-  //review video for the location of this variable to instantiate the class Card
-  // const card = new Card(cardData, "#card-template", handleImageClick);
 
   return cardElement;
 }
 
+// function renderCard(cardData, wrapper) {
+//   const cardElement = getCardElement(cardData);
+//   wrapper.prepend(cardElement);
+//   //review video for the location of this variable to instantiate the class Card
+//   // const card = new Card(cardData, "#card-template", handleImageClick);
+// }
+
 function renderCard(cardData, wrapper) {
-  const cardElement = getCardElement(cardData);
+  const cardElement = getView();
   wrapper.prepend(cardElement);
-  //review video for the location of this variable to instantiate the class Card
-  const card = new Card(cardData, "#card-template", handleImageClick);
 }
 
 function openProfileModal() {
@@ -217,6 +221,11 @@ cardAddButton.addEventListener("click", () => {
 cardAddForm.addEventListener("submit", handleCardAddSubmit);
 
 /* ------------------------------ Initial cards ----------------------------- */
+// initialCards.forEach((cardData) => {
+//   const cardElement = getCardElement(cardData);
+//   cardListElement.append(cardElement);
+// });
+
 initialCards.forEach((cardData) => {
   const cardElement = getCardElement(cardData);
   cardListElement.append(cardElement);
